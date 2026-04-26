@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ふくろうの台所 ～糀のある暮らし～</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Dancing+Script:wght@500;700&family=Klee+One:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;700&family=Yomogi&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+:root{
+  --bg:       #FDFAF4;
+  --bg-beige: #F0D9B5;
+  --brown:    #3B2314;
+  --brown-m:  #8B5E3C;
+  --brown-l:  #C4956A;
+  --accent:   #E8C99A;
+  --text:     #3B2314;
+  --text-l:   #7A5442;
+  --white:    #FFFFFF;
+}
+
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:14px;line-height:1.9;
+  color:var(--text);background:var(--bg);
+}
+
+/* ===== NAV ===== */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:var(--bg-beige);
+  border-bottom:1px solid var(--accent);
+  height:76px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 28px;
+}
+.nav-logo img{height:64px;display:block;border-radius:4px;}
+.nav-links{display:flex;gap:24px;}
+.nav-links a{
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:12px;font-weight:500;
+  color:var(--brown-m);text-decoration:none;
+  letter-spacing:0.08em;
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--brown);}
+.nav-cta{
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:12px;font-weight:700;
+  color:var(--brown);
+  border:1.5px solid var(--brown);
+  padding:6px 18px;
+  text-decoration:none;
+  letter-spacing:0.08em;
+  transition:background .2s,color .2s;
+}
+.nav-cta:hover{background:var(--brown);color:var(--white);}
+
+/* ===== HERO ===== */
+.hero{
+  margin-top:76px;
+  position:relative;
+  width:100%;
+  height:90vh;min-height:560px;max-height:800px;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('koji-tray.png.png') center center/cover no-repeat;
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(30,15,5,0.25) 0%,
+    rgba(30,15,5,0.55) 60%,
+    rgba(30,15,5,0.70) 100%
+  );
+}
+.hero-inner{
+  position:relative;z-index:1;
+  height:100%;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:flex-end;
+  padding-bottom:72px;
+  text-align:center;
+}
+.hero-catch-en{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(13px,1.8vw,17px);
+  font-weight:300;
+  color:rgba(255,255,255,0.7);
+  letter-spacing:0.3em;
+  margin-bottom:20px;display:block;
+}
+.hero-catch-v{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(28px,5vw,52px);
+  font-weight:700;
+  color:#fff;
+  line-height:1.5;letter-spacing:0.06em;
+  margin-bottom:28px;
+  text-shadow:0 2px 12px rgba(0,0,0,0.4);
+}
+.hero-lead{
+  font-size:13px;color:rgba(255,255,255,0.8);
+  line-height:2;max-width:420px;
+  margin:0 auto 36px;
+}
+.hero-btn{
+  display:inline-block;
+  background:rgba(255,255,255,0.15);
+  border:1px solid rgba(255,255,255,0.7);
+  color:#fff;
+  font-size:13px;font-weight:500;
+  padding:14px 44px;
+  text-decoration:none;letter-spacing:0.15em;
+  backdrop-filter:blur(4px);
+  transition:background .25s,border-color .25s;
+}
+.hero-btn:hover{
+  background:rgba(255,255,255,0.28);
+  border-color:#fff;
+}
+
+/* アニメーション */
+.anim-reveal{
+  opacity:0;transform:translateY(20px);
+  animation:revealUp 0.8s ease forwards;
+}
+.delay-1{animation-delay:0.2s;}
+.delay-2{animation-delay:0.4s;}
+.delay-3{animation-delay:0.6s;}
+.delay-4{animation-delay:0.8s;}
+@keyframes revealUp{to{opacity:1;transform:translateY(0);}}
+
+/* ===== BOTANICAL DIVIDER ===== */
+.b-div{
+  text-align:center;
+  padding:8px 0;
+  line-height:0;
+}
+.b-div svg{width:min(500px,90%);height:auto;}
+
+/* ===== SECTION BASE ===== */
+section{padding:72px 24px;}
+.inner{max-width:960px;margin:0 auto;}
+
+.s-label{
+  display:flex;align-items:center;justify-content:center;
+  gap:10px;margin-bottom:8px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:11px;font-weight:400;
+  letter-spacing:0.4em;color:var(--brown-m);
+  text-transform:uppercase;
+}
+.s-label svg{flex-shrink:0;}
+
+.s-title{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(20px,3vw,28px);
+  font-weight:700;color:var(--brown);
+  margin-bottom:8px;line-height:1.4;
+  text-align:center;
+}
+.s-title-left{text-align:left;}
+
+.s-deco{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(15px,2vw,20px);
+  color:var(--brown-l);
+  text-align:center;
+  margin-bottom:28px;
+  display:block;
+}
+.s-lead{
+  font-size:13px;color:var(--text-l);
+  line-height:2;text-align:center;margin-bottom:28px;
+}
+
+/* ===== CONCEPT ===== */
+.concept{background:var(--bg);}
+.concept-title-row{
+  display:flex;
+  align-items:flex-end;
+  gap:12px;
+}
+.concept-fukumi{
+  /* s-titleと同じ font-size:clamp(20px,3vw,28px) × line-height:1.4 × 2行 */
+  height:calc(clamp(20px,3vw,28px) * 2.8);
+  width:auto;
+  mix-blend-mode:multiply;
+  flex-shrink:0;
+}
+.concept-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:48px;align-items:center;
+}
+.concept-img img{
+  width:100%;height:400px;
+  object-fit:cover;display:block;
+}
+.concept-text p{
+  font-size:14px;line-height:2.1;
+  color:var(--text);margin-bottom:16px;
+}
+.concept-text em{
+  font-style:normal;
+  color:var(--brown-m);font-weight:700;
+}
+.concept-quote{
+  border-left:3px solid var(--brown-m);
+  padding:16px 20px;
+  background:var(--bg-beige);
+  font-size:14px;font-weight:700;
+  color:var(--brown);line-height:2;
+  margin-top:24px;
+}
+
+/* ===== FOR WHO ===== */
+.forwho{background:var(--bg-beige);}
+.fw-card-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+  margin-top:48px;
+}
+.fw-card{
+  background:var(--white);
+  border-radius:4px;
+  padding:24px;
+  display:grid;
+  grid-template-areas:
+    "bubble bubble"
+    "photo  title"
+    "text   text";
+  grid-template-columns:120px 1fr;
+  row-gap:16px;column-gap:16px;
+  box-shadow:0 4px 20px rgba(59,35,20,0.07);
+}
+.fw-bubble{
+  grid-area:bubble;
+  display:inline-block;
+  justify-self:start;
+  position:relative;
+  background:transparent;
+  border:none;
+  color:var(--brown);
+  font-family:'Klee One',cursive;
+  font-size:15px;font-weight:600;letter-spacing:0.06em;
+  padding:2px 2px 22px;
+  line-height:1.5;
+  margin-bottom:0;
+}
+/* 手書き風カーブ線（添付イメージ準拠） */
+.fw-bubble::after{
+  content:'';
+  position:absolute;
+  bottom:4px;left:0;
+  width:100%;height:18px;
+  background-image:url("data:image/svg+xml,<svg viewBox='0 0 300 18' xmlns='http://www.w3.org/2000/svg'><path d='M4,7 C35,5 85,17 150,18 C215,17 265,5 296,7' stroke='%238B5E3C' stroke-width='2' fill='none' stroke-linecap='round'/></svg>");
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+}
+.fw-bubble::before{ display:none; }
+.fw-illustration{
+  grid-area:photo;
+  width:120px;height:120px;
+  background:var(--bg-beige);
+  border-radius:10px;
+  overflow:hidden;
+  align-self:center;
+  box-shadow:0 6px 18px rgba(59,35,20,0.13);
+  border:1px solid rgba(196,149,106,0.25);
+}
+.fw-illustration img{width:100%;height:100%;object-fit:cover;}
+.fw-h3{
+  grid-area:title;
+  align-self:center;
+  font-family:'Noto Serif JP',serif;
+  font-size:15px;font-weight:700;
+  color:var(--brown);line-height:1.6;
+}
+.fw-text{
+  grid-area:text;
+  font-size:13px;color:var(--text-l);line-height:1.9;
+}
+
+/* ===== SERVICES ===== */
+.services{background:var(--bg);}
+.flow-row{
+  display:flex;align-items:center;gap:6px;
+  overflow-x:auto;padding:4px 0 24px;
+  margin-bottom:28px;
+}
+.flow-box{
+  min-width:110px;flex-shrink:0;
+  text-align:center;padding:12px 8px;
+  border:1px solid var(--accent);
+  background:var(--bg-beige);
+}
+.flow-box .ft{
+  font-family:'Noto Serif JP',serif;
+  font-size:12px;font-weight:700;color:var(--brown);margin-bottom:3px;
+}
+.flow-box .fs{font-size:10px;color:var(--text-l);}
+.flow-arr{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;color:var(--accent);flex-shrink:0;
+}
+.sv-grid{display:flex;flex-direction:column;gap:16px;}
+.sv-card{
+  background:var(--white);
+  border:1px solid var(--accent);
+  padding:24px;
+  position:relative;overflow:hidden;
+  display:grid;grid-template-columns:1fr auto;
+  gap:0 20px;
+}
+.sv-card::before{
+  content:'';position:absolute;
+  left:0;top:0;bottom:0;width:4px;
+}
+.sv-card.c-entry::before{background:#5C8A5C;}
+.sv-card.c-main::before{background:#5B7BA6;}
+.sv-card.c-special::before{background:var(--brown-m);}
+.sv-card.c-adv::before{background:var(--brown);}
+.sv-head{grid-column:1/2;display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.sv-price{
+  grid-column:2/3;grid-row:1/3;
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;font-weight:600;
+  color:var(--brown-m);
+  align-self:center;white-space:nowrap;
+}
+.sv-badge{
+  font-size:10px;letter-spacing:0.1em;
+  padding:2px 10px;
+  border:1px solid;
+}
+.b-entry{border-color:#5C8A5C;color:#5C8A5C;}
+.b-main{border-color:#5B7BA6;color:#5B7BA6;}
+.b-special{border-color:var(--brown-m);color:var(--brown-m);}
+.b-adv{border-color:var(--brown);color:var(--brown);}
+.b-prep{border-color:#8B7BAE;color:#8B7BAE;background:#F5F0FF;}
+.sv-name{
+  font-family:'Noto Serif JP',serif;
+  font-size:15px;font-weight:700;color:var(--brown);
+}
+.sv-desc{font-size:13px;color:var(--text-l);line-height:1.9;margin-bottom:10px;}
+.sv-note{
+  font-size:12px;color:var(--text-l);
+  background:var(--bg-beige);
+  padding:8px 12px;line-height:1.7;
+}
+
+/* ===== MENU ===== */
+.menu-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  margin-top:40px;
+}
+.menu-card{
+  background:var(--white);
+  border-radius:20px;
+  overflow:hidden;
+  border:1px solid var(--accent);
+  box-shadow:0 15px 30px rgba(0,0,0,0.05);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+}
+.menu-card.featured{
+  border:2px solid var(--accent);
+  transform:scale(1.02);
+}
+.menu-badge{
+  position:absolute;top:15px;left:15px;
+  background:var(--accent);
+  color:var(--white);
+  padding:4px 12px;font-size:12px;font-weight:700;
+  border-radius:50px;z-index:2;
+}
+.fukumi-recommend{
+  position:absolute;top:-10px;right:-10px;
+  width:60px;z-index:3;
+}
+.fukumi-recommend img{width:100%;}
+.menu-img{height:220px;overflow:hidden;}
+.menu-img img{width:100%;height:100%;object-fit:cover;transition:0.5s;}
+.menu-card:hover .menu-img img{transform:scale(1.1);}
+.menu-content{padding:30px;flex-grow:1;display:flex;flex-direction:column;}
+.menu-h3{
+  font-family:'Noto Serif JP',serif;
+  font-size:18px;color:var(--brown);margin-bottom:15px;
+}
+.menu-desc{font-size:14px;color:var(--text-l);line-height:1.7;margin-bottom:20px;}
+.menu-details{list-style:none;margin-bottom:25px;padding:0;}
+.menu-details li{
+  font-size:13px;color:var(--brown);
+  margin-bottom:8px;
+  display:flex;align-items:center;
+}
+.menu-details li::before{content:'●';color:var(--accent);margin-right:8px;font-size:10px;}
+.menu-btn{
+  margin-top:auto;
+  background:var(--accent);
+  color:var(--white);text-align:center;padding:15px;
+  text-decoration:none;border-radius:10px;font-weight:700;transition:0.3s;
+  display:block;
+}
+.menu-btn.secondary{background:var(--bg-beige);color:var(--brown-m);border:1px solid var(--accent);}
+.menu-btn:hover{opacity:0.85;}
+
+/* ===== SCHEDULE ===== */
+.schedule{background:var(--bg-beige);}
+.sch-photos{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-bottom:32px;
+}
+.sch-photo-item{
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:0 4px 16px rgba(0,0,0,0.08);
+  background:var(--white);
+}
+.sch-photo-item img{
+  width:100%;height:180px;
+  object-fit:cover;display:block;
+}
+.sch-photo-item span{
+  display:block;
+  text-align:center;
+  font-family:'Noto Serif JP',serif;
+  font-size:13px;color:var(--brown);
+  padding:10px 8px;
+  letter-spacing:0.05em;
+}
+.sch-table{width:100%;border-collapse:collapse;font-size:13px;}
+.sch-table th{
+  background:var(--brown);color:var(--white);
+  padding:10px 14px;text-align:left;
+  font-family:'Noto Serif JP',serif;
+  font-size:11px;letter-spacing:0.08em;
+}
+.sch-table td{
+  padding:10px 14px;
+  border-bottom:1px solid var(--accent);
+  background:var(--white);color:var(--text);
+  vertical-align:middle;
+}
+.sch-table tr:hover td{background:var(--bg);}
+.tag{
+  display:inline-block;font-size:10px;
+  letter-spacing:0.08em;
+  padding:2px 10px;border:1px solid;
+}
+.t-open{border-color:#8B1A2A;color:#8B1A2A;}
+.t-entry{border-color:#2A5A32;color:#2A5A32;}
+.t-price{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:var(--brown-m);}
+
+/* ===== SEASONAL ===== */
+.seasonal{background:var(--bg);}
+.sea-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.sea-card{
+  border:1px solid var(--accent);
+  background:var(--white);
+  padding:0;
+  overflow:hidden;
+  border-radius:4px;
+}
+.sea-img{
+  width:100%;height:140px;overflow:hidden;
+}
+.sea-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 0.4s;
+}
+.sea-card:hover .sea-img img{transform:scale(1.05);}
+.sea-body{
+  padding:16px;
+}
+.sea-month{
+  font-family:'Cormorant Garamond',serif;
+  font-size:11px;letter-spacing:0.25em;
+  color:var(--brown-l);margin-bottom:6px;
+}
+.sea-num{
+  font-family:'Noto Serif JP',serif;
+  font-size:28px;font-weight:700;
+  color:var(--accent);line-height:1;margin-bottom:8px;
+}
+.sea-menu{
+  font-family:'Noto Serif JP',serif;
+  font-size:14px;font-weight:700;
+  color:var(--brown);margin-bottom:8px;
+  line-height:1.4;
+}
+.sea-time{font-size:11px;color:var(--text-l);}
+.sea-loc{
+  font-size:10px;color:var(--brown-l);
+  letter-spacing:0.05em;margin-top:4px;
+}
+.tax-note{font-size:0.6em;font-weight:400;vertical-align:middle;letter-spacing:0;}
+.sea-price{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;font-weight:600;color:var(--brown-m);
+  margin-top:8px;
+  padding-top:8px;border-top:1px solid var(--accent);
+}
+
+/* ===== PROFILE ===== */
+.profile{background:var(--bg-beige);}
+.prof-grid-v2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:56px;
+  align-items:center;
+  margin-top:40px;
+}
+.prof-visual{
+  position:relative;
+  width:100%;height:520px;
+  overflow:hidden;
+  border-radius:4px;
+}
+.prof-illust-bg{
+  position:absolute;top:0;left:0;
+  width:100%;height:100%;
+  opacity:0.5;
+  filter:sepia(0.2);
+}
+.prof-illust-bg img{
+  width:100%;height:100%;object-fit:cover;
+}
+.prof-main-img{
+  position:absolute;bottom:0;left:50%;
+  transform:translateX(-50%);
+  width:88%;z-index:2;
+}
+.prof-main-img img{
+  width:100%;filter:drop-shadow(0 10px 24px rgba(0,0,0,0.25));
+}
+.prof-name-row{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:4px;
+}
+.prof-fukumi-peek{
+  height:80px;
+  width:auto;
+  flex-shrink:0;
+  mix-blend-mode:multiply;
+}
+.prof-name-wrap{margin-bottom:20px;}
+.prof-name{
+  font-family:'Noto Serif JP',serif;
+  font-size:22px;font-weight:700;
+  color:var(--brown);margin-bottom:4px;
+}
+.prof-name-en{
+  font-family:'Cormorant Garamond',serif;
+  font-size:13px;font-weight:300;
+  letter-spacing:0.2em;color:var(--brown-l);
+  margin-bottom:12px;display:block;
+}
+.prof-role{
+  font-size:11px;letter-spacing:0.2em;
+  color:var(--brown-m);
+  border-left:2px solid var(--brown-m);
+  padding-left:10px;margin-bottom:0;
+}
+.prof-story{
+  margin-bottom:24px;
+  border-left:1px solid var(--accent);
+  padding-left:20px;
+}
+.prof-text{
+  font-size:13px;color:var(--text);
+  line-height:2.1;margin-bottom:16px;
+}
+.prof-quals{display:flex;flex-wrap:wrap;gap:8px;}
+.q-tag{
+  font-size:11px;
+  border:1px solid var(--brown-l);
+  color:var(--brown-m);
+  padding:4px 12px;
+  letter-spacing:0.05em;
+}
+
+/* ===== PAYMENT ===== */
+.payment{background:var(--bg);}
+.pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.pay-box{
+  background:var(--white);
+  border:1px solid var(--accent);
+  padding:24px;
+}
+.pay-box-title{
+  font-family:'Noto Serif JP',serif;
+  font-size:14px;font-weight:700;color:var(--brown);
+  margin-bottom:16px;padding-bottom:10px;
+  border-bottom:2px solid var(--brown-m);
+  display:flex;align-items:center;gap:10px;
+}
+.pay-fukumi{
+  height:52px;width:auto;flex-shrink:0;
+  mix-blend-mode:multiply;
+}
+.pay-row{
+  display:flex;justify-content:space-between;
+  padding:8px 0;border-bottom:1px solid var(--bg-beige);
+  font-size:13px;align-items:baseline;
+}
+.pay-row:last-child{border-bottom:none;}
+.pk{color:var(--text-l);}
+.pv{font-weight:500;color:var(--text);text-align:right;}
+.pv.warn{color:#8B1A2A;font-weight:700;}
+.ticket-box{
+  background:var(--brown);color:var(--bg-beige);
+  padding:28px;text-align:center;
+}
+.t-en{
+  font-family:'Cormorant Garamond',serif;
+  font-size:12px;letter-spacing:0.35em;
+  color:rgba(240,217,181,0.8);margin-bottom:8px;display:block;
+}
+.t-label{
+  font-family:'Noto Serif JP',serif;
+  font-size:14px;font-weight:700;
+  color:var(--bg-beige);
+  margin-bottom:16px;line-height:1.9;
+}
+.ticket-box .t-price{
+  font-family:'Noto Serif JP',serif;
+  font-size:16px;font-weight:700;
+  color:var(--bg-beige);
+  line-height:2;margin-bottom:4px;
+}
+.ticket-box .t-price small{font-size:13px;font-weight:400;}
+.t-note{
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:12px;color:rgba(240,217,181,0.85);
+  line-height:2.2;margin-top:14px;
+  border-top:1px solid rgba(240,217,181,0.3);
+  padding-top:14px;
+}
+
+/* ===== ACCESS ===== */
+.access{background:var(--brown);padding:72px 24px;}
+.access .s-label{color:rgba(240,217,181,0.6);}
+.access .s-label svg ellipse{fill:var(--bg-beige);}
+.access .s-title{color:var(--bg-beige);}
+.access .s-deco{color:rgba(240,217,181,0.5);}
+.loc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.loc-item{
+  display:flex;gap:16px;
+  padding:16px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(240,217,181,0.15);
+}
+.loc-icon{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;font-weight:300;
+  color:var(--bg-beige);opacity:.6;
+  flex-shrink:0;line-height:1;
+  padding-top:2px;
+}
+.loc-label{
+  font-size:10px;letter-spacing:0.2em;
+  color:rgba(240,217,181,0.5);
+  margin-bottom:4px;
+}
+.loc-val{
+  font-size:13px;color:var(--bg-beige);
+  line-height:1.8;
+}
+.loc-val a{color:var(--accent);text-decoration:underline;font-size:12px;}
+.loc-span2{grid-column:1/-1;}
+
+/* ===== CTA ===== */
+.cta{background:var(--bg-beige);padding:80px 24px;text-align:center;}
+.cta-deco{
+  font-family:'Dancing Script',cursive;
+  font-size:28px;color:var(--brown-l);
+  margin-bottom:16px;display:block;
+}
+.cta-title{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(20px,3.5vw,30px);
+  font-weight:700;color:var(--brown);
+  line-height:1.5;margin-bottom:12px;
+}
+.cta-lead{
+  font-size:13px;color:var(--text-l);
+  line-height:2;margin-bottom:32px;
+}
+.cta-btn{
+  display:inline-block;
+  border:2px solid var(--brown);
+  color:var(--brown);
+  font-size:13px;font-weight:700;
+  padding:16px 48px;
+  text-decoration:none;letter-spacing:0.1em;
+  transition:background .2s,color .2s;
+}
+.cta-btn:hover{background:var(--brown);color:var(--white);}
+.cta-sub{
+  font-size:15px;color:var(--brown);
+  font-weight:500;
+  margin-top:24px;line-height:2.2;
+}
+
+/* ===== Q&A ===== */
+.qa{background:var(--bg);}
+.qa-list{max-width:800px;margin:40px auto 0;}
+.qa-item{
+  margin-bottom:20px;
+  border:1px solid var(--accent);
+  border-radius:15px;
+  overflow:hidden;
+  background:var(--white);
+}
+.qa-question{
+  padding:20px 25px;
+  background:var(--bg-beige);
+  display:flex;align-items:center;
+}
+.qa-q{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;color:var(--accent);font-weight:700;
+  margin-right:15px;flex-shrink:0;
+}
+.qa-question h3{font-size:16px;color:var(--brown);margin:0;line-height:1.5;}
+.qa-answer{
+  padding:25px;display:flex;gap:20px;
+  border-top:1px solid rgba(139,94,60,0.1);
+}
+.qa-fukumi{width:50px;flex-shrink:0;}
+.qa-fukumi img{width:100%;height:auto;}
+.qa-a-content{flex:1;}
+.qa-text{font-size:14px;color:var(--text-l);line-height:1.7;margin-bottom:10px;}
+.fukumi-tip{
+  font-size:12px;background:var(--white);
+  border:1px dashed var(--accent);
+  padding:8px 12px;border-radius:8px;
+  color:var(--brown);display:inline-block;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:var(--brown);
+  padding:0 0 32px;text-align:center;
+  border-top:3px solid var(--brown-m);
+}
+.footer-map{width:100%;line-height:0;}
+.footer-access-grid{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:0 48px;
+  max-width:900px;
+  margin:0 auto 36px;
+  padding:36px 32px 0;
+  text-align:left;
+  border-top:1px solid rgba(240,217,181,0.15);
+}
+.footer-info-col{display:flex;flex-direction:column;gap:18px;}
+.footer-access-item{color:var(--bg-beige);}
+.footer-access-label{
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:10px;font-weight:500;
+  letter-spacing:0.2em;
+  color:rgba(240,217,181,0.45);
+  margin-bottom:5px;
+  text-transform:uppercase;
+}
+.footer-line-col{
+  display:flex;flex-direction:column;
+  align-items:center;gap:12px;
+  min-width:140px;
+}
+.footer-line-qr{
+  background:rgba(240,217,181,0.08);
+  border:1px dashed rgba(240,217,181,0.3);
+  border-radius:8px;
+  width:120px;height:120px;
+  display:flex;align-items:center;justify-content:center;
+}
+.footer-line-qr-placeholder{
+  font-family:'Cormorant Garamond',serif;
+  font-size:13px;letter-spacing:0.15em;
+  color:rgba(240,217,181,0.4);
+}
+.footer-line-text{
+  font-size:12px;
+  color:#F5E8D0;
+  line-height:1.9;
+  text-align:center;
+  max-width:150px;
+}
+.footer-access-val{
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:15px;font-weight:500;
+  color:#F5E8D0;
+  line-height:2;
+}
+.footer-access-val small{
+  font-size:13px;
+  color:rgba(245,232,208,0.75);
+  display:block;
+  margin-top:2px;
+}
+/* フッターブランドエリア */
+.footer-brand{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:20px;
+  padding:40px 24px 0;
+}
+.footer-brand-img{
+  flex-shrink:0;
+  height:calc(clamp(20px,3.5vw,30px)*1.5 + clamp(13px,1.5vw,16px)*1.5 + 8px);
+  width:auto;
+}
+.footer-brand-text{text-align:left;}
+.footer-brand-name{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(20px,3.5vw,30px);
+  font-weight:700;
+  color:var(--bg-beige);
+  line-height:1.5;
+  display:block;
+}
+.footer-brand-sub{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(13px,1.5vw,16px);
+  color:rgba(240,217,181,0.75);
+  line-height:1.5;
+  display:block;
+  margin-top:4px;
+}
+.footer-info{
+  font-size:11px;
+  color:rgba(240,217,181,0.5);
+  line-height:2.2;letter-spacing:0.05em;
+}
+.footer-en{
+  font-family:'Cormorant Garamond',serif;
+  font-size:12px;letter-spacing:0.2em;
+  color:rgba(240,217,181,0.4);
+  margin-top:8px;display:block;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:640px){
+  .nav-links{display:none;}
+  .concept-grid{grid-template-columns:1fr;}
+  .concept-img img{height:260px;}
+  .fw-card-grid{grid-template-columns:1fr;}
+  .menu-grid{grid-template-columns:1fr;}
+  .menu-card.featured{transform:none;}
+  .qa-answer{flex-direction:column;}
+  .qa-fukumi{width:40px;}
+  .sea-grid{grid-template-columns:repeat(2,1fr);}
+  .prof-grid-v2{grid-template-columns:1fr;gap:40px;}
+  .prof-visual{height:320px;}
+  .prof-quals{justify-content:center;}
+  .pay-grid{grid-template-columns:1fr;}
+  .loc-grid{grid-template-columns:1fr;}
+  .loc-span2{grid-column:1;}
+  section{padding:56px 20px;}
+  .access{padding:56px 20px;}
+  .cta{padding:60px 20px;}
+  .hero-visual-collage{width:280px;height:300px;}
+  .main-img{width:260px;height:260px;}
+  .koji-tray{width:130px;height:130px;right:-10px;}
+  .teacher-cutout{width:130px;right:-5px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <div class="nav-logo"><img src="logo.png" alt="ふくろうの台所"></div>
+  <div class="nav-links">
+    <a href="#concept">教室について</a>
+    <a href="#services">レッスン</a>
+    <a href="#schedule">日程</a>
+    <a href="#profile">先生</a>
+    <a href="#access">アクセス</a>
+  </div>
+  <a href="#cta" class="nav-cta">LINEで予約</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <span class="hero-catch-en anim-reveal">Fermented Living with Koji</span>
+    <h1 class="hero-catch-v anim-reveal delay-1">
+      仕込んで、育てて、<br>もっと好きになる。
+    </h1>
+    <p class="hero-lead anim-reveal delay-2">
+      毎日のお料理に、もう一つの深みを。<br>
+      糀を通じて、発酵のある暮らしをあなたの日常へ。
+    </p>
+    <a href="#cta" class="hero-btn anim-reveal delay-3">LINEでレッスンを予約する</a>
+  </div>
+</div>
+
+<!-- botanical divider -->
+<div class="b-div" style="background:var(--bg);padding:20px 0 0;">
+  <svg viewBox="0 0 600 50" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,25 Q60,12 130,25 Q180,33 240,22" stroke="#C4956A" stroke-width="0.8" fill="none" opacity="0.5"/>
+    <path d="M360,22 Q420,12 480,25 Q540,35 600,22" stroke="#C4956A" stroke-width="0.8" fill="none" opacity="0.5"/>
+    <ellipse cx="110" cy="17" rx="16" ry="5.5" fill="#8B5E3C" opacity="0.2" transform="rotate(-30,110,17)"/>
+    <ellipse cx="150" cy="29" rx="13" ry="4.5" fill="#8B5E3C" opacity="0.17" transform="rotate(18,150,29)"/>
+    <ellipse cx="215" cy="16" rx="12" ry="4" fill="#8B5E3C" opacity="0.15" transform="rotate(-15,215,16)"/>
+    <ellipse cx="390" cy="17" rx="16" ry="5.5" fill="#8B5E3C" opacity="0.2" transform="rotate(30,390,17)"/>
+    <ellipse cx="445" cy="29" rx="13" ry="4.5" fill="#8B5E3C" opacity="0.17" transform="rotate(-18,445,29)"/>
+    <ellipse cx="490" cy="16" rx="12" ry="4" fill="#8B5E3C" opacity="0.15" transform="rotate(15,490,16)"/>
+    <circle cx="300" cy="25" r="3" fill="#8B5E3C" opacity="0.4"/>
+    <circle cx="286" cy="25" r="1.8" fill="#8B5E3C" opacity="0.25"/>
+    <circle cx="314" cy="25" r="1.8" fill="#8B5E3C" opacity="0.25"/>
+  </svg>
+</div>
+
+<!-- ===== CONCEPT ===== -->
+<section class="concept" id="concept">
+  <div class="inner">
+    <div class="concept-grid">
+      <div class="concept-img">
+        <img src="owner.jpg" alt="福澤奈保子 ふくろうの台所主宰">
+      </div>
+      <div class="concept-text">
+        <div class="s-label">
+          <svg width="10" height="14" viewBox="0 0 10 14"><ellipse cx="5" cy="8" rx="4" ry="7" fill="#8B5E3C" opacity="0.35" transform="rotate(-15,5,8)"/></svg>
+          Concept
+          <svg width="10" height="14" viewBox="0 0 10 14"><ellipse cx="5" cy="8" rx="4" ry="7" fill="#8B5E3C" opacity="0.35" transform="rotate(15,5,8)"/></svg>
+        </div>
+        <div class="concept-title-row">
+          <h2 class="s-title s-title-left">ふくろうの台所<br>について</h2>
+          <img src="illust-owl.png.png" alt="FUKUMIちゃん" class="concept-fukumi">
+        </div>
+        <span class="s-deco" style="text-align:left;display:block">about this classroom</span>
+        <p class="concept-text">
+          毎日のお料理に、もう一つの深みを。仕込む楽しさ、育てる喜び、食卓が変わる驚き——<em>知れば知るほど、もっと好きになる糀の世界。</em>
+        </p>
+        <p class="concept-text">
+          糀が持つ力は、調味料としてだけでなく、腸を整え、体を内側から変えていきます。<em>ゆるっと腸活したい。でも続かない</em>——そんな方ほど、糀は向いています。
+        </p>
+        <div class="concept-quote">
+          糀を『知り・仕込み・育て・食べる』体験を通じて、<br>
+          発酵のある暮らしをあなたの日常へ届ける教室です。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- botanical divider -->
+<div class="b-div" style="background:var(--bg-beige);">
+  <svg viewBox="0 0 600 40" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20,20 Q100,8 200,20 Q280,28 340,18" stroke="#C4956A" stroke-width="0.8" fill="none" opacity="0.4"/>
+    <path d="M260,18 Q320,10 400,20 Q480,30 580,18" stroke="#C4956A" stroke-width="0.8" fill="none" opacity="0.4"/>
+    <ellipse cx="80" cy="12" rx="14" ry="5" fill="#8B5E3C" opacity="0.18" transform="rotate(-25,80,12)"/>
+    <ellipse cx="180" cy="24" rx="12" ry="4" fill="#8B5E3C" opacity="0.15" transform="rotate(15,180,24)"/>
+    <ellipse cx="420" cy="12" rx="14" ry="5" fill="#8B5E3C" opacity="0.18" transform="rotate(25,420,12)"/>
+    <ellipse cx="520" cy="24" rx="12" ry="4" fill="#8B5E3C" opacity="0.15" transform="rotate(-15,520,24)"/>
+    <circle cx="300" cy="20" r="2.5" fill="#8B5E3C" opacity="0.35"/>
+  </svg>
+</div>
+
+<!-- ===== FOR WHO ===== -->
+<section class="forwho" id="forwho">
+  <div class="inner">
+    <div class="s-label">
+      <svg width="10" height="14" viewBox="0 0 10 14"><ellipse cx="5" cy="8" rx="4" ry="7" fill="#8B5E3C" opacity="0.35" transform="rotate(-15,5,8)"/></svg>
+      Our Concept
+      <svg width="10" height="14" viewBox="0 0 10 14"><ellipse cx="5" cy="8" rx="4" ry="7" fill="#8B5E3C" opacity="0.35" transform="rotate(15,5,8)"/></svg>
+    </div>
+    <h2 class="s-title">「私の台所でも、できそう」が<br>確信に変わる場所</h2>
+    <span class="s-deco">from our kitchen to yours</span>
+
+    <div class="fw-card-grid">
+      <div class="fw-card anim-reveal delay-1">
+        <div class="fw-bubble">「その場で食べて、レシピを持ち帰る」</div>
+        <div class="fw-illustration"><img src="illust-recipe.png.png" alt="レシピと食事"></div>
+        <h3 class="fw-h3">「美味しい！」の感動を、そのまま再現</h3>
+        <p class="fw-text">糀を活かしたランチをその場で堪能。 詳しいレシピ付きだから、夕食の献立にすぐ活かせます。「これなら私にもできる」という確信を、あなたにお届けします。</p>
+      </div>
+
+      <div class="fw-card anim-reveal delay-2">
+        <div class="fw-bubble">「三日坊主の私でも、できるかな？」</div>
+        <div class="fw-illustration"><img src="illust-step.png.png" alt="習慣化"></div>
+        <h3 class="fw-h3">楽しみながら、いつのまにか習慣に</h3>
+        <p class="fw-text">実際に見て、触れて、味わう体験を通じて、糀が日常の一部に。 一人では難しいステップも、ここなら仲間と一緒に「楽しみ」ながら、心地よく続けられます。</p>
+      </div>
+
+      <div class="fw-card anim-reveal delay-3">
+        <div class="fw-bubble">「10年後の自分のために、整えたい」</div>
+        <div class="fw-illustration"><img src="illust-future.png.jfif" alt="健康投資"></div>
+        <h3 class="fw-h3">一生モノの調味料を、あなたの台所に</h3>
+        <p class="fw-text">塩麹・醤油麹・甘麹の基本をマスター。 食べたもので体はできているから、まずは毎日の「基本の調味料」から。自分と家族への最高の投資を、今日から始めませんか。</p>
+      </div>
+
+      <div class="fw-card anim-reveal delay-4">
+        <div class="fw-bubble">「ホッと自分に還れる場所が欲しかった」</div>
+        <div class="fw-illustration"><img src="illust-home.png.png" alt="癒やしの場所"></div>
+        <h3 class="fw-h3">自分をリセットする、特別な時間を</h3>
+        <p class="fw-text">笑って、食べて、おしゃべりして——気づいたら糀のとりこに。日常の喧騒を忘れ、心も体も満たされる、あなただけの特別な時間になります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- botanical divider -->
+<div class="b-div" style="background:var(--bg);">
+  <svg viewBox="0 0 600 44" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,22 C80,6 160,36 240,20 C320,4 400,38 480,22 C540,10 580,26 600,20" stroke="#C4956A" stroke-width="0.8" fill="none" opacity="0.4"/>
+    <ellipse cx="60" cy="10" rx="13" ry="4.5" fill="#8B5E3C" opacity="0.17" transform="rotate(-20,60,10)"/>
+    <ellipse cx="200" cy="30" rx="11" ry="4" fill="#8B5E3C" opacity="0.15" transform="rotate(25,200,30)"/>
+    <ellipse cx="400" cy="30" rx="11" ry="4" fill="#8B5E3C" opacity="0.15" transform="rotate(-25,400,30)"/>
+    <ellipse cx="540" cy="10" rx="13" ry="4.5" fill="#8B5E3C" opacity="0.17" transform="rotate(20,540,10)"/>
+    <circle cx="300" cy="22" r="2" fill="#8B5E3C" opacity="0.3"/>
+  </svg>
+</div>
+
+<!-- ===== SERVICES ===== -->
+<section class="menu" id="menu">
+  <div class="inner">
+    <div class="s-label">
+      <svg width="10" height="14" viewBox="0 0 10 14"><ellipse cx="5" cy="8" rx="4" ry="7" fill="#8B5E3C" opacity="0.35" transform="rotate(-15,5,8)"/></svg>
+      Lesson Menu
+      <svg width="10" height="14" viewBox="0 0 10 14"><ellipse cx="5" cy="8" rx="4" ry="7" fill="#8B5E3C" opacity="0.35" transform="rotate(15,5,8)"/></svg>
+    </div>
+    <h2 class="s-title">レッスンのご案内</h2>
+    <span class="s-deco">step by step with koji</span>
+
+    <div class="menu-grid">
+      <div class="menu-card featured anim-reveal delay-1">
+        <div class="menu-badge">はじめての方に！</div>
+        <div class="menu-img"><img src="illust-future.png.jfif" alt="麹体験講座"></div>
+        <div class="menu-content">
+          <h3 class="menu-h3">麹体験講座</h3>
+          <p class="menu-desc">塩麹・醤油麹・甘麹の3種を仕込み、麹調味料で作ったお食事を召し上がっていただきます。仕込んだ麹3種はお持ち帰り。「難しくない」と実感できる、発酵生活の第一歩。</p>
+          <ul class="menu-details">
+            <li>月2回開催（昼・夜）</li>
+            <li>定員6名 ／ 単発参加OK</li>
+            <li>¥4,950<span class="tax-note">（税込）</span></li>
+          </ul>
+          <a href="#cta" class="menu-btn">LINEで予約する</a>
+        </div>
+      </div>
+
+      <div class="menu-card anim-reveal delay-2">
+        <div class="menu-badge" style="background:var(--brown-m);">継続コース</div>
+        <div class="menu-img"><img src="menu-jars.png.webp" alt="発酵習慣講座"></div>
+        <div class="menu-content">
+          <h3 class="menu-h3">発酵習慣講座</h3>
+          <p class="menu-desc">麹調味料・腸活ドリンク・発酵パンなど6つのテーマを学ぶ継続コース。発酵メニューのお食事＋レシピ付き！チケットを購入して参加する継続レッスンです。</p>
+          <ul class="menu-details">
+            <li>チケット制のみ（単発不可）</li>
+            <li>3枚綴り ¥19,800<span class="tax-note">（税込）</span></li>
+            <li>6枚綴り ¥36,300<span class="tax-note">（税込）</span></li>
+          </ul>
+          <a href="#cta" class="menu-btn secondary">詳しく見る</a>
+        </div>
+      </div>
+
+      <div class="menu-card anim-reveal delay-3">
+        <div class="menu-badge" style="background:var(--brown-l);">単発OK</div>
+        <div class="menu-img"><img src="menu-osechi.png.jpg" alt="季節の特別発酵講座"></div>
+        <div class="menu-content">
+          <h3 class="menu-h3">季節の特別発酵講座</h3>
+          <p class="menu-desc">行事・季節テーマで毎回内容が変わる特別レッスン。7〜12月に毎月開催。ランチ込みで単発参加もOK。</p>
+          <ul class="menu-details">
+            <li>年6回・各回定員6名</li>
+            <li>ランチ込み ／ 単発参加OK</li>
+            <li>¥6,600<span class="tax-note">（税込）</span>　チケット使用可</li>
+          </ul>
+          <a href="#cta" class="menu-btn secondary">次回開催を確認する</a>
+        </div>
+      </div>
+
+      <div class="menu-card anim-reveal delay-4">
+        <div class="menu-badge" style="background:var(--brown);font-size:10px;">発酵習慣講座受講生のみ</div>
+        <div class="menu-img"><img src="menu-miso.png.jpg" alt="発酵マスター集中講座"></div>
+        <div class="menu-content">
+          <h3 class="menu-h3">発酵マスター集中講座</h3>
+          <p class="menu-desc">玄米麹＆玄米こうじみそづくりを学ぶ深堀りコース。発酵習慣講座受講生のみ参加可能。年3回開催。</p>
+          <ul class="menu-details">
+            <li>発酵習慣講座受講生限定</li>
+            <li>定員6名 ／ 年3回（2・6・10月）</li>
+            <li>¥27,500<span class="tax-note">（税込）</span></li>
+          </ul>
+          <a href="#cta" class="menu-btn secondary">詳しく見る</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- botanical divider -->
+<div class="b-div" style="background:var(--bg-beige);">
+  <svg viewBox="0 0 600 40" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="20" x2="600" y2="20" stroke="#E8C99A" stroke-width="0.6" opacity="0.6"/>
+    <ellipse cx="120" cy="14" rx="15" ry="5" fill="#8B5E3C" opacity="0.18" transform="rotate(-22,120,14)"/>
+    <ellipse cx="160" cy="26" rx="12" ry="4" fill="#8B5E3C" opacity="0.14" transform="rotate(18,160,26)"/>
+    <ellipse cx="440" cy="14" rx="15" ry="5" fill="#8B5E3C" opacity="0.18" transform="rotate(22,440,14)"/>
+    <ellipse cx="480" cy="26" rx="12" ry="4" fill="#8B5E3C" opacity="0.14" transform="rotate(-18,480,26)"/>
+    <circle cx="300" cy="20" r="3" fill="#8B5E3C" opacity="0.3"/>
+    <circle cx="292" cy="20" r="1.5" fill="#8B5E3C" opacity="0.2"/>
+    <circle cx="308" cy="20" r="1.5" fill="#8B5E3C" opacity="0.2"/>
+  </svg>
+</div>
+
+<!-- ===== OPENING SCHEDULE ===== -->
+<section class="schedule" id="schedule">
+  <div class="inner">
+    <div class="s-label">
+      <svg width="10" height="14" viewBox="0 0 10 14"><ellipse cx="5" cy="8" rx="4" ry="7" fill="#8B5E3C" opacity="0.35" transform="rotate(-15,5,8)"/></svg>
+      Opening Schedule
+      <svg width="10" height="14" viewBox="0 0 10 14"><ellipse cx="5" cy="8" rx="4" ry="7" fill="#8B5E3C" opacity="0.35" transform="rotate(15,5,8)"/></svg>
+    </div>
+    <h2 class="s-title">オープン記念レッスン日程</h2>
+    <span class="s-deco">5月・6月</span>
+    <p class="s-lead">5・6月はオープン記念レッスン＆麹体験講座に絞って開講。各回定員6名・ワークショップ＋レシピ＋食事込み・<strong>エプロン持参</strong>。</p>
+
+    <div class="sch-photos">
+      <div class="sch-photo-item">
+        <img src="sch-fruit.png.png" alt="フルーツ酵素">
+        <span>フルーツ酵素</span>
+      </div>
+      <div class="sch-photo-item">
+        <img src="sch-tomato.png.jfif" alt="トマト麹">
+        <span>トマト麹</span>
+      </div>
+      <div class="sch-photo-item">
+        <img src="sch-koji.png.png" alt="塩麹・醤油麹・甘麹">
+        <span>塩麹・醤油麹・甘麹</span>
+      </div>
+    </div>
+
+    <div style="overflow-x:auto">
+      <table class="sch-table">
+        <thead>
+          <tr>
+            <th>日程</th>
+            <th>時間</th>
+            <th>メニュー</th>
+            <th style="text-align:right">参加費</th>
+            <th style="text-align:center">区分</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>5/27（火）・6/19（木）</td>
+            <td style="white-space:nowrap">11:00〜14:00</td>
+            <td>フルーツ酵素</td>
+            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span></td>
+            <td style="text-align:center"><span class="tag t-open">オープン記念</span></td>
+          </tr>
+          <tr>
+            <td>6/13（金）</td>
+            <td style="white-space:nowrap">11:00〜14:00</td>
+            <td>トマト麹</td>
+            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span></td>
+            <td style="text-align:center"><span class="tag t-open">オープン記念</span></td>
+          </tr>
+          <tr>
+            <td>6/2（月）・6/17（火）</td>
+            <td style="white-space:nowrap">18:30〜20:30</td>
+            <td>トマト麹</td>
+            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span></td>
+            <td style="text-align:center"><span class="tag t-open">オープン記念</span></td>
+          </tr>
+          <tr>
+            <td>6/13（金）</td>
+            <td style="white-space:nowrap">18:30〜20:30</td>
+            <td>フルーツ酵素</td>
+            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span></td>
+            <td style="text-align:center"><span class="tag t-open">オープン記念</span></td>
+          </tr>
+          <tr>
+            <td>6/23（月）・7/4（金）</td>
+            <td style="white-space:nowrap">11:00〜14:00</td>
+            <td>麹体験講座（塩麹・醤油麹・甘麹）</td>
+            <td style="text-align:right"><span class="t-price">¥4,950<span class="tax-note">（税込）</span></span></td>
+            <td style="text-align:center"><span class="tag t-entry">麹体験</span></td>
+          </tr>
+          <tr>
+            <td>6/23（月）・7/4（金）</td>
+            <td style="white-space:nowrap">18:30〜20:30</td>
+            <td>麹体験講座（塩麹・醤油麹・甘麹）</td>
+            <td style="text-align:right"><span class="t-price">¥4,950<span class="tax-note">（税込）</span></span></td>
+            <td style="text-align:center"><span class="tag t-entry">麹体験</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- botanical divider -->
+<div class="b-div" style="background:var(--bg);">
+  <svg viewBox="0 0 600 44" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,22 Q150,8 300,22 Q450,36 600,22" stroke="#C4956A" stroke-width="0.7" fill="none" opacity="0.4"/>
+    <ellipse cx="70" cy="14" rx="14" ry="4.5" fill="#8B5E3C" opacity="0.18" transform="rotate(-28,70,14)"/>
+    <ellipse cx="530" cy="14" rx="14" ry="4.5" fill="#8B5E3C" opacity="0.18" transform="rotate(28,530,14)"/>
+    <ellipse cx="200" cy="30" rx="11" ry="3.5" fill="#8B5E3C" opacity="0.13" transform="rotate(15,200,30)"/>
+    <ellipse cx="400" cy="30" rx="11" ry="3.5" fill="#8B5E3C" opacity="0.13" transform="rotate(-15,400,30)"/>
+    <circle cx="300" cy="22" r="2.5" fill="#8B5E3C" opacity="0.35"/>
+  </svg>
+</div>
+
+<!-- ===== SEASONAL ===== -->
+<section class="seasonal" id="seasonal">
+  <div class="inner">
+    <div class="s-label">
+      <svg width="10" height="14" viewBox="0 0 10 14"><ellipse cx="5" cy="8" rx="4" ry="7" fill="#8B5E3C" opacity="0.35" transform="rotate(-15,5,8)"/></svg>
+      Seasonal Lesson
+      <svg width="10" height="14" viewBox="0 0 10 14"><ellipse cx="5" cy="8" rx="4" ry="7" fill="#8B5E3C" opacity="0.35" transform="rotate(15,5,8)"/></svg>
+    </div>
+    <h2 class="s-title">季節の特別発酵講座</h2>
+    <span class="s-deco">7月 → 12月</span>
+    <p class="s-lead">季節の食材と発酵を掛け合わせた特別レッスン。毎回内容が変わります。</p>
+    <div class="sea-grid">
+      <div class="sea-card">
+        <div class="sea-img"><img src="sea-july.png.jpg" alt="くずプリン"></div>
+        <div class="sea-body">
+          <div class="sea-month">JULY</div>
+          <div class="sea-num">7月</div>
+          <div class="sea-menu">くずプリン</div>
+          <div class="sea-time">🕐 11:00〜14:00</div>
+          <div class="sea-price">¥6,600<span class="tax-note">（税込）</span></div>
+        </div>
+      </div>
+      <div class="sea-card">
+        <div class="sea-img"><img src="sea-aug.png.jfif" alt="手作りコチュジャン"></div>
+        <div class="sea-body">
+          <div class="sea-month">AUGUST</div>
+          <div class="sea-num">8月</div>
+          <div class="sea-menu">手作りコチュジャン</div>
+          <div class="sea-time">🕕 18:30〜20:30</div>
+          <div class="sea-price">¥6,600<span class="tax-note">（税込）</span></div>
+        </div>
+      </div>
+      <div class="sea-card">
+        <div class="sea-img"><img src="sea-sep.png.png" alt="持ち寄り発酵パーティー"></div>
+        <div class="sea-body">
+          <div class="sea-month">SEPTEMBER</div>
+          <div class="sea-num">9月</div>
+          <div class="sea-menu">持ち寄り発酵パーティー</div>
+          <div class="sea-time">🕕 18:30〜20:30</div>
+          <div class="sea-loc">📍 福籠店舗にて</div>
+          <div class="sea-price">¥6,600<span class="tax-note">（税込）</span></div>
+        </div>
+      </div>
+      <div class="sea-card">
+        <div class="sea-img"><img src="sea-oct.png.jpg" alt="ひよこ豆味噌づくり"></div>
+        <div class="sea-body">
+          <div class="sea-month">OCTOBER</div>
+          <div class="sea-num">10月</div>
+          <div class="sea-menu">ひよこ豆味噌づくり</div>
+          <div class="sea-time">🕐 11:00〜14:00<br>🕕 18:30〜20:30（2回開催）</div>
+          <div class="sea-price">¥6,600<span class="tax-note">（税込）</span></div>
+        </div>
+      </div>
+      <div class="sea-card">
+        <div class="sea-img"><img src="sea-nov.png.png" alt="新蕎麦食べ比べ会"></div>
+        <div class="sea-body">
+          <div class="sea-month">NOVEMBER</div>
+          <div class="sea-num">11月</div>
+          <div class="sea-menu">新蕎麦食べ比べ会</div>
+          <div class="sea-time">🕕 18:30〜20:30</div>
+          <div class="sea-loc">📍 福籠店舗にて</div>
+          <div class="sea-price">¥6,600<span class="tax-note">（税込）</span></div>
+        </div>
+      </div>
+      <div class="sea-card">
+        <div class="sea-img"><img src="menu-osechi.png.jpg" alt="発酵おせち"></div>
+        <div class="sea-body">
+          <div class="sea-month">DECEMBER</div>
+          <div class="sea-num">12月</div>
+          <div class="sea-menu">発酵おせち</div>
+          <div class="sea-time">🕐 11:00〜14:00</div>
+          <div class="sea-price">¥6,600<span class="tax-note">（税込）</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- botanical divider -->
+<div class="b-div" style="background:var(--bg-beige);">
+  <svg viewBox="0 0 600 40" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,20 Q80,30 160,18 Q240,8 320,20 Q400,32 480,18 Q540,10 600,22" stroke="#C4956A" stroke-width="0.7" fill="none" opacity="0.35"/>
+    <ellipse cx="100" cy="12" rx="13" ry="4" fill="#8B5E3C" opacity="0.16" transform="rotate(-20,100,12)"/>
+    <ellipse cx="450" cy="12" rx="13" ry="4" fill="#8B5E3C" opacity="0.16" transform="rotate(20,450,12)"/>
+    <circle cx="300" cy="20" r="2" fill="#8B5E3C" opacity="0.28"/>
+  </svg>
+</div>
+
+<!-- ===== PROFILE ===== -->
+<section class="profile" id="profile">
+  <div class="inner">
+    <div class="s-label">
+      <svg width="10" height="14" viewBox="0 0 10 14"><ellipse cx="5" cy="8" rx="4" ry="7" fill="#8B5E3C" opacity="0.35" transform="rotate(-15,5,8)"/></svg>
+      Message from Teacher
+      <svg width="10" height="14" viewBox="0 0 10 14"><ellipse cx="5" cy="8" rx="4" ry="7" fill="#8B5E3C" opacity="0.35" transform="rotate(15,5,8)"/></svg>
+    </div>
+    <h2 class="s-title">「食べる」ことは、自分を慈しむこと</h2>
+    <span class="s-deco">about the teacher</span>
+
+    <div class="prof-grid-v2">
+      <div class="prof-visual anim-reveal delay-1">
+        <div class="prof-illust-bg"><img src="illust-salon.png" alt=""></div>
+        <div class="prof-main-img"><img src="teacher-cutout.png.png" alt="福澤 奈保子"></div>
+      </div>
+
+      <div class="prof-content anim-reveal delay-2">
+        <div class="prof-name-wrap">
+          <div class="prof-name-row">
+            <img src="fukumi-peek.png.png" alt="FUKUMIちゃん" class="prof-fukumi-peek">
+            <h3 class="prof-name">福澤 奈保子</h3>
+          </div>
+          <span class="prof-name-en">Nahoko Fukuzawa</span>
+          <div class="prof-role">ふくろうの台所　主宰</div>
+        </div>
+
+        <div class="prof-story">
+          <p class="prof-text">
+            自社店舗「福籠」で10年培った「食で人を喜ばせる」技術と、私自身が蕎麦アレルギーをきっかけに体で学んだ発酵の力。
+          </p>
+          <p class="prof-text">
+            実は私自身、これまでに2度体を壊しました。そんな絶望の中で私を救ってくれたのが、他ならぬ「食」でした。 その実体験こそが、この教室の原点です。
+          </p>
+          <p class="prof-text">
+            「難しくない」「心地よく続けられる」発酵生活を、あなたの日常へ。 私と一緒に、一歩ずつ始めてみませんか。
+          </p>
+        </div>
+
+        <div class="prof-quals">
+          <span class="q-tag">発酵食大学修了</span>
+          <span class="q-tag">上級麹士</span>
+          <span class="q-tag">薬膳麹士（取得中）</span>
+          <span class="q-tag">料理歴20年以上</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- botanical divider -->
+<div class="b-div" style="background:var(--bg);">
+  <svg viewBox="0 0 600 40" xmlns="http://www.w3.org/2000/svg">
+    <path d="M40,20 Q120,10 200,22 Q280,32 360,18 Q440,8 560,22" stroke="#C4956A" stroke-width="0.7" fill="none" opacity="0.38"/>
+    <ellipse cx="150" cy="14" rx="14" ry="4.5" fill="#8B5E3C" opacity="0.17" transform="rotate(-22,150,14)"/>
+    <ellipse cx="420" cy="14" rx="14" ry="4.5" fill="#8B5E3C" opacity="0.17" transform="rotate(22,420,14)"/>
+    <circle cx="300" cy="20" r="2" fill="#8B5E3C" opacity="0.28"/>
+  </svg>
+</div>
+
+<!-- ===== PAYMENT ===== -->
+<section class="payment" id="payment">
+  <div class="inner">
+    <div class="s-label">
+      <svg width="10" height="14" viewBox="0 0 10 14"><ellipse cx="5" cy="8" rx="4" ry="7" fill="#8B5E3C" opacity="0.35" transform="rotate(-15,5,8)"/></svg>
+      Lesson Info
+      <svg width="10" height="14" viewBox="0 0 10 14"><ellipse cx="5" cy="8" rx="4" ry="7" fill="#8B5E3C" opacity="0.35" transform="rotate(15,5,8)"/></svg>
+    </div>
+    <h2 class="s-title">ご参加のルール</h2>
+    <span class="s-deco">payment &amp; info</span>
+    <div class="pay-grid">
+      <div class="pay-box">
+        <div class="pay-box-title">
+          お支払い・キャンセル
+          <img src="fukumi-bow.png.png" alt="FUKUMIちゃん" class="pay-fukumi">
+        </div>
+        <div class="pay-row"><span class="pk">支払い方法</span><span class="pv">現金 ／ PayPay</span></div>
+        <div class="pay-row"><span class="pk">支払いタイミング</span><span class="pv">当日払い</span></div>
+        <div class="pay-row"><span class="pk">持ち物</span><span class="pv">エプロン持参</span></div>
+        <div class="pay-row"><span class="pk">キャンセル締切</span><span class="pv">開催3日前まで</span></div>
+        <div class="pay-row"><span class="pk">当日キャンセル</span><span class="pv warn">受講料100%</span></div>
+        <div class="pay-row"><span class="pk">アレルギー対応</span><span class="pv">ご予約時にご相談を</span></div>
+        <div class="pay-row"><span class="pk">最少催行人数</span><span class="pv">1名より開催</span></div>
+      </div>
+      <div>
+        <div class="ticket-box">
+          <span class="t-en">Ticket</span>
+          <div class="t-label">発酵習慣講座・季節の特別発酵講座に使用可<br>共通チケット</div>
+          <div class="t-price">3枚綴り ¥19,800<span class="tax-note">（税込）</span>　／　6枚綴り ¥36,300<span class="tax-note">（税込）</span></div>
+          <div class="t-note">
+            1枚=1回参加 ／ 昼夜共通 ／ 有効期限1年<br>
+            名刺サイズのスタンプカード発行<br>
+            初回受講当日に現地にてご購入<br>
+            ※発酵習慣講座はチケット制のみ
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Q&A ===== -->
+<section class="qa" id="qa">
+  <div class="inner">
+    <div class="s-label">
+      <svg width="10" height="14" viewBox="0 0 10 14"><ellipse cx="5" cy="8" rx="4" ry="7" fill="#8B5E3C" opacity="0.35" transform="rotate(-15,5,8)"/></svg>
+      Q & A
+      <svg width="10" height="14" viewBox="0 0 10 14"><ellipse cx="5" cy="8" rx="4" ry="7" fill="#8B5E3C" opacity="0.35" transform="rotate(15,5,8)"/></svg>
+    </div>
+    <h2 class="s-title">よくあるご質問</h2>
+    <span class="s-deco">your questions answered</span>
+
+    <div class="qa-list">
+      <div class="qa-item anim-reveal">
+        <div class="qa-question">
+          <span class="qa-q">Q</span>
+          <h3>料理が苦手で、全くの初心者ですが大丈夫ですか？</h3>
+        </div>
+        <div class="qa-answer">
+          <div class="qa-fukumi"><img src="fukumi-nav.png.png" alt="FUKUMIちゃん"></div>
+          <div class="qa-a-content">
+            <p class="qa-text">もちろんです！「ふくろうの台所」は、難しい工程を極力省いたレシピを提案しています。 むしろ、料理に苦手意識がある方にこそ、混ぜるだけで美味しくなる糀の魔法を体験していただきたいです。</p>
+            <div class="fukumi-tip">FUKUMIの一言：包丁をあまり使わないメニューも多いから、安心してね♪</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-item anim-reveal">
+        <div class="qa-question">
+          <span class="qa-q">Q</span>
+          <h3>一人で参加しても浮きませんか？</h3>
+        </div>
+        <div class="qa-answer">
+          <div class="qa-fukumi"><img src="fukumi-nav.png.png" alt="FUKUMIちゃん"></div>
+          <div class="qa-a-content">
+            <p class="qa-text">お一人で参加される方がほとんどですので、ご安心ください。 少人数制の温かい雰囲気の中、糀を通じた共通の話題ですぐに打ち解けていただけますよ。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-item anim-reveal">
+        <div class="qa-question">
+          <span class="qa-q">Q</span>
+          <h3>アレルギーがあるのですが、対応してもらえますか？</h3>
+        </div>
+        <div class="qa-answer">
+          <div class="qa-fukumi"><img src="fukumi-nav.png.png" alt="FUKUMIちゃん"></div>
+          <div class="qa-a-content">
+            <p class="qa-text">主宰の福澤自身も蕎麦アレルギーを経験しており、食の制限には深く配慮しています。 事前にご相談いただければ、可能な限り代替食材などの対応をさせていただきます。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-item anim-reveal">
+        <div class="qa-question">
+          <span class="qa-q">Q</span>
+          <h3>持ち物や服装について教えてください。</h3>
+        </div>
+        <div class="qa-answer">
+          <div class="qa-fukumi"><img src="fukumi-nav.png.png" alt="FUKUMIちゃん"></div>
+          <div class="qa-a-content">
+            <p class="qa-text">エプロンとハンドタオル、そして筆記用具をお持ちください。 服装は動きやすい普段着でOKです。仕込んだ麹をお持ち帰りいただくための保冷バッグなどが必要な場合は、事前にお知らせします。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta" id="cta">
+  <div class="inner">
+    <span class="cta-deco">let's start together</span>
+    <h2 class="cta-title">発酵のある暮らし、<br>はじめませんか。</h2>
+    <p class="cta-lead">
+      オープン記念レッスン受付中。<br>
+      ご予約・お問い合わせはLINEからお気軽にどうぞ。
+    </p>
+    <a href="#" class="cta-btn">LINEで予約・お問い合わせ</a>
+    <div class="cta-sub">
+      LINE公式アカウントからご予約いただけます<br>
+      📞 080-6854-3351（出られない場合は折り返しご連絡します）
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer id="access">
+  <!-- 地図 -->
+  <div class="footer-map">
+    <iframe
+      src="https://maps.google.co.jp/maps?q=富山市大泉東町1-3-9+スィートレジデンス&output=embed&hl=ja&z=16"
+      width="100%" height="240" style="border:0;display:block;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <!-- ブランドエリア -->
+  <div class="footer-brand">
+    <img src="fukumi-footer.png.png" alt="FUKUMIちゃん" class="footer-brand-img">
+    <div class="footer-brand-text">
+      <span class="footer-brand-name">ふくろうの台所</span>
+      <span class="footer-brand-sub">～糀のある暮らし～</span>
+    </div>
+  </div>
+
+  <!-- サロン情報 -->
+  <div class="footer-access-grid">
+    <!-- 左：サロン情報 -->
+    <div class="footer-info-col">
+      <div class="footer-access-item">
+        <div class="footer-access-label">ADDRESS</div>
+        <div class="footer-access-val">富山市大泉東町1-3-9　スィートレジデンス 6C</div>
+      </div>
+      <div class="footer-access-item">
+        <div class="footer-access-label">TEL</div>
+        <div class="footer-access-val">080-6854-3351<br><small>出られない場合は折り返しご連絡します</small></div>
+      </div>
+      <div class="footer-access-item">
+        <div class="footer-access-label">LESSON HOURS</div>
+        <div class="footer-access-val">昼 11:00〜14:00　／　夜 18:30〜20:30</div>
+      </div>
+      <div class="footer-access-item">
+        <div class="footer-access-label">PARKING</div>
+        <div class="footer-access-val">3台あり（屋内2台・屋外1台）</div>
+      </div>
+      <div class="footer-access-item">
+        <div class="footer-access-label">SISTER STORE</div>
+        <div class="footer-access-val">本格手打ちそば 福籠（自社店舗）　<a href="https://www.fukurousoba.com/" target="_blank" rel="noopener" style="color:rgba(240,217,181,0.65)">fukurousoba.com</a></div>
+      </div>
+    </div>
+
+    <!-- 右：LINE QRコード -->
+    <div class="footer-line-col">
+      <div class="footer-access-label">LINE 公式アカウント</div>
+      <div class="footer-line-qr">
+        <div class="footer-line-qr-placeholder">QR</div>
+      </div>
+      <p class="footer-line-text">LINEでお気軽にご質問・ご予約を。<br>お友だち追加でレッスン情報をお届けします🌿</p>
+    </div>
+  </div>
+
+  <!-- コピーライト -->
+  <div class="footer-info">
+    <span class="footer-en">© 2025 Fukurou no Daidokoro — Fermented Living with Koji</span>
+  </div>
+</footer>
+
+</body>
+</html>
