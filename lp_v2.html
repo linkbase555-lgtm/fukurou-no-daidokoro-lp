@@ -465,6 +465,72 @@ section{padding:72px 24px;}
 .t-entry{border-color:#2A5A32;color:#2A5A32;}
 .t-price{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:var(--brown-m);}
 
+/* ===== LESSON CALENDAR ===== */
+.lesson-cal-wrap{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin:32px 0 40px;
+}
+.lesson-cal{
+  background:var(--white);
+  border:1px solid var(--accent);
+  border-radius:8px;
+  overflow:hidden;
+}
+.cal-header{
+  background:var(--brown);
+  color:var(--bg-beige);
+  font-family:'Noto Serif JP',serif;
+  font-size:13px;font-weight:700;
+  text-align:center;
+  padding:10px;
+  letter-spacing:0.1em;
+}
+.cal-grid{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:0;
+  padding:8px;
+}
+.cal-dow{
+  font-size:10px;font-weight:700;
+  color:var(--text-l);
+  text-align:center;
+  padding:4px 0 6px;
+  letter-spacing:0.05em;
+}
+.cal-dow.sun{color:#b94040;}
+.cal-dow.sat{color:#3a6eaa;}
+.cal-grid > div:not(.cal-dow):not(.cal-empty){
+  font-size:12px;
+  text-align:center;
+  padding:5px 2px;
+  border-radius:4px;
+  color:var(--text);
+}
+.cal-grid > div.sun{color:#b94040;}
+.cal-grid > div.sat{color:#3a6eaa;}
+.cal-empty{background:transparent;}
+.cal-lesson{
+  background:var(--accent) !important;
+  color:var(--white) !important;
+  font-weight:700;
+  border-radius:50% !important;
+}
+.cal-legend{
+  display:flex;align-items:center;gap:6px;
+  padding:6px 10px 8px;
+  font-size:11px;color:var(--text-l);
+  border-top:1px solid var(--bg-beige);
+}
+.cal-dot{
+  width:10px;height:10px;
+  background:var(--accent);
+  border-radius:50%;
+  display:inline-block;flex-shrink:0;
+}
+
 /* ===== SEASONAL ===== */
 .seasonal{background:var(--bg);}
 .sea-grid{
@@ -1061,7 +1127,6 @@ footer{
             <li>定員6名 ／ 単発参加OK</li>
             <li>¥4,950<span class="tax-note">（税込）</span></li>
           </ul>
-          <a href="#cta" class="menu-btn">LINEで予約する</a>
         </div>
       </div>
 
@@ -1076,7 +1141,6 @@ footer{
             <li>3枚綴り ¥19,800<span class="tax-note">（税込）</span></li>
             <li>6枚綴り ¥36,300<span class="tax-note">（税込）</span></li>
           </ul>
-          <a href="#cta" class="menu-btn secondary">詳しく見る</a>
         </div>
       </div>
 
@@ -1091,7 +1155,6 @@ footer{
             <li>ランチ込み ／ 単発参加OK</li>
             <li>¥6,600<span class="tax-note">（税込）</span>　チケット使用可</li>
           </ul>
-          <a href="#cta" class="menu-btn secondary">次回開催を確認する</a>
         </div>
       </div>
 
@@ -1106,7 +1169,6 @@ footer{
             <li>定員6名 ／ 年3回（2・6・10月）</li>
             <li>¥27,500<span class="tax-note">（税込）</span></li>
           </ul>
-          <a href="#cta" class="menu-btn secondary">詳しく見る</a>
         </div>
       </div>
     </div>
@@ -1154,6 +1216,57 @@ footer{
       </div>
     </div>
 
+    <!-- カレンダー -->
+    <div class="lesson-cal-wrap">
+
+      <!-- 5月 -->
+      <div class="lesson-cal">
+        <div class="cal-header">2026年 5月</div>
+        <div class="cal-grid">
+          <div class="cal-dow sun">日</div><div class="cal-dow">月</div><div class="cal-dow">火</div><div class="cal-dow">水</div><div class="cal-dow">木</div><div class="cal-dow">金</div><div class="cal-dow sat">土</div>
+          <!-- 5/1=金 -->
+          <div class="cal-empty"></div><div class="cal-empty"></div><div class="cal-empty"></div><div class="cal-empty"></div><div class="cal-empty"></div><div>1</div><div class="sat">2</div>
+          <div class="sun">3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div class="sat">9</div>
+          <div class="sun">10</div><div>11</div><div>12</div><div>13</div><div>14</div><div>15</div><div class="sat">16</div>
+          <div class="sun">17</div><div>18</div><div>19</div><div>20</div><div>21</div><div>22</div><div class="sat">23</div>
+          <div class="sun">24</div><div>25</div><div>26</div><div class="cal-lesson" title="糀体験講座">27</div><div>28</div><div>29</div><div class="sat">30</div>
+          <div class="sun">31</div>
+        </div>
+        <div class="cal-legend"><span class="cal-dot"></span>レッスン日</div>
+      </div>
+
+      <!-- 6月 -->
+      <div class="lesson-cal">
+        <div class="cal-header">2026年 6月</div>
+        <div class="cal-grid">
+          <div class="cal-dow sun">日</div><div class="cal-dow">月</div><div class="cal-dow">火</div><div class="cal-dow">水</div><div class="cal-dow">木</div><div class="cal-dow">金</div><div class="cal-dow sat">土</div>
+          <!-- 6/1=月 -->
+          <div class="cal-empty"></div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div class="sat">6</div>
+          <div class="sun">7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div class="sat cal-lesson" title="麹体験講座">13</div>
+          <div class="sun">14</div><div>15</div><div>16</div><div class="cal-lesson" title="糀体験講座">17</div><div>18</div><div class="cal-lesson" title="糀体験講座">19</div><div class="sat">20</div>
+          <div class="sun">21</div><div>22</div><div class="cal-lesson" title="麹体験講座">23</div><div>24</div><div>25</div><div>26</div><div class="sat">27</div>
+          <div class="sun">28</div><div>29</div><div>30</div>
+        </div>
+        <div class="cal-legend"><span class="cal-dot"></span>レッスン日</div>
+      </div>
+
+      <!-- 7月 -->
+      <div class="lesson-cal">
+        <div class="cal-header">2026年 7月</div>
+        <div class="cal-grid">
+          <div class="cal-dow sun">日</div><div class="cal-dow">月</div><div class="cal-dow">火</div><div class="cal-dow">水</div><div class="cal-dow">木</div><div class="cal-dow">金</div><div class="cal-dow sat">土</div>
+          <!-- 7/1=水 -->
+          <div class="cal-empty"></div><div class="cal-empty"></div><div class="cal-empty"></div><div>1</div><div>2</div><div>3</div><div class="sat cal-lesson" title="麹体験講座">4</div>
+          <div class="sun">5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div class="sat">11</div>
+          <div class="sun">12</div><div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div class="sat">18</div>
+          <div class="sun">19</div><div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div class="sat">25</div>
+          <div class="sun">26</div><div>27</div><div>28</div><div>29</div><div>30</div><div>31</div>
+        </div>
+        <div class="cal-legend"><span class="cal-dot"></span>レッスン日</div>
+      </div>
+
+    </div>
+
     <div style="overflow-x:auto">
       <table class="sch-table">
         <thead>
@@ -1167,42 +1280,42 @@ footer{
         </thead>
         <tbody>
           <tr>
-            <td>5/27（火）・6/19（木）</td>
+            <td>5/27（水）・6/19（金）</td>
             <td style="white-space:nowrap">11:00〜14:00</td>
             <td>フルーツ酵素</td>
             <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span></td>
             <td style="text-align:center"><span class="tag t-open">オープン記念</span></td>
           </tr>
           <tr>
-            <td>6/13（金）</td>
+            <td>6/13（土）</td>
             <td style="white-space:nowrap">11:00〜14:00</td>
             <td>トマト麹</td>
             <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span></td>
             <td style="text-align:center"><span class="tag t-open">オープン記念</span></td>
           </tr>
           <tr>
-            <td>6/17（火）</td>
+            <td>6/17（水）</td>
             <td style="white-space:nowrap">18:30〜20:30</td>
             <td>トマト麹</td>
             <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span></td>
             <td style="text-align:center"><span class="tag t-open">オープン記念</span></td>
           </tr>
           <tr>
-            <td>6/13（金）</td>
+            <td>6/13（土）</td>
             <td style="white-space:nowrap">18:30〜20:30</td>
             <td>フルーツ酵素</td>
             <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span></td>
             <td style="text-align:center"><span class="tag t-open">オープン記念</span></td>
           </tr>
           <tr>
-            <td>6/23（月）・7/4（金）</td>
+            <td>6/23（火）・7/4（土）</td>
             <td style="white-space:nowrap">11:00〜14:00</td>
             <td>麹体験講座（塩麹・醤油麹・甘麹）</td>
             <td style="text-align:right"><span class="t-price">¥4,950<span class="tax-note">（税込）</span></span></td>
             <td style="text-align:center"><span class="tag t-entry">麹体験</span></td>
           </tr>
           <tr>
-            <td>6/23（月）・7/4（金）</td>
+            <td>6/23（火）・7/4（土）</td>
             <td style="white-space:nowrap">18:30〜20:30</td>
             <td>麹体験講座（塩麹・醤油麹・甘麹）</td>
             <td style="text-align:right"><span class="t-price">¥4,950<span class="tax-note">（税込）</span></span></td>
