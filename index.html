@@ -463,6 +463,7 @@ section{padding:72px 24px;}
 }
 .t-open{border-color:#8B1A2A;color:#8B1A2A;}
 .t-entry{border-color:#2A5A32;color:#2A5A32;}
+.t-special{border-color:#5A3A7A;color:#5A3A7A;}
 .t-price{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:var(--brown-m);}
 
 /* ===== LESSON CALENDAR ===== */
@@ -532,6 +533,92 @@ section{padding:72px 24px;}
 }
 
 /* ===== SEASONAL ===== */
+/* ===== FERMENTATION LUNCH ===== */
+.flunch{background:var(--bg-beige);}
+.flunch-card{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+  align-items:start;
+  margin-top:32px;
+  background:var(--white);
+  border-radius:4px;
+  padding:32px;
+  box-shadow:0 4px 20px rgba(59,35,20,0.07);
+}
+.flunch-img-wrap{
+  border-radius:4px;
+  overflow:hidden;
+  aspect-ratio:4/3;
+  background:var(--bg-beige);
+}
+.flunch-img-wrap img{
+  width:100%;height:100%;object-fit:cover;
+}
+.flunch-menu-title{
+  font-family:'Noto Serif JP',serif;
+  font-size:20px;font-weight:700;
+  color:var(--brown);margin-bottom:12px;
+}
+.flunch-desc{
+  font-size:14px;line-height:1.8;
+  color:var(--text);margin-bottom:20px;
+}
+.flunch-date-box{
+  background:var(--bg-beige);
+  border-left:3px solid var(--accent);
+  padding:12px 16px;
+  border-radius:0 4px 4px 0;
+  margin-bottom:20px;
+}
+.flunch-date-label{
+  font-size:11px;letter-spacing:0.12em;
+  color:var(--brown-l);margin-bottom:4px;
+}
+.flunch-date{
+  font-family:'Noto Serif JP',serif;
+  font-size:18px;font-weight:700;
+  color:var(--brown);margin-bottom:4px;
+}
+.flunch-limit{
+  font-size:13px;color:var(--brown-l);
+}
+.flunch-price-wrap{margin-bottom:24px;}
+.flunch-price-row{
+  display:flex;align-items:baseline;
+  gap:12px;
+}
+.flunch-price-label{
+  font-size:13px;color:var(--brown-l);
+  min-width:90px;
+}
+.flunch-price{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;font-weight:700;color:var(--brown);
+}
+.flunch-price-note{
+  font-size:12px;color:var(--brown-l);
+  margin-top:4px;margin-bottom:8px;
+  padding-left:102px;
+}
+.flunch-btn{
+  display:block;
+  background:var(--brown);
+  color:var(--bg-beige);
+  text-align:center;
+  padding:14px 24px;
+  border-radius:4px;
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:15px;font-weight:700;
+  letter-spacing:0.08em;
+  text-decoration:none;
+  transition:background 0.2s;
+}
+.flunch-btn:hover{background:var(--accent);}
+@media(max-width:640px){
+  .flunch-card{grid-template-columns:1fr;}
+}
+
 .seasonal{background:var(--bg);}
 .sea-grid{
   display:grid;
@@ -963,6 +1050,7 @@ footer{
     <a href="#concept">教室について</a>
     <a href="#services">レッスン</a>
     <a href="#schedule">日程</a>
+    <a href="#flunch">発酵ランチ</a>
     <a href="#profile">先生</a>
     <a href="#access">アクセス</a>
   </div>
@@ -1198,7 +1286,7 @@ footer{
       <svg width="10" height="14" viewBox="0 0 10 14"><ellipse cx="5" cy="8" rx="4" ry="7" fill="#8B5E3C" opacity="0.35" transform="rotate(15,5,8)"/></svg>
     </div>
     <h2 class="s-title">オープン記念レッスン日程</h2>
-    <span class="s-deco">5月・6月</span>
+    <span class="s-deco">5月・6月・7月</span>
     <p class="s-lead">5・6月はオープン記念レッスン＆麹体験講座に絞って開講。各回定員6名・ワークショップ＋レシピ＋食事込み・<strong>エプロン持参</strong>。</p>
 
     <div class="sch-photos">
@@ -1236,7 +1324,7 @@ footer{
             <td style="text-align:center"><span class="tag t-open">オープン記念</span></td>
           </tr>
           <tr>
-            <td>6/13（土）</td>
+            <td>6/10（水）</td>
             <td style="white-space:nowrap">11:00〜14:00</td>
             <td>トマト麹</td>
             <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span></td>
@@ -1257,18 +1345,39 @@ footer{
             <td style="text-align:center"><span class="tag t-open">オープン記念</span></td>
           </tr>
           <tr>
-            <td>6/23（火）・7/4（土）</td>
+            <td>6/23（火）・7/9（木）</td>
             <td style="white-space:nowrap">11:00〜14:00</td>
             <td>麹体験講座（塩麹・醤油麹・甘麹）</td>
             <td style="text-align:right"><span class="t-price">¥4,950<span class="tax-note">（税込）</span></span></td>
             <td style="text-align:center"><span class="tag t-entry">麹体験</span></td>
           </tr>
           <tr>
-            <td>6/23（火）・7/4（土）</td>
+            <td>6/23（火）・7/3（金）</td>
             <td style="white-space:nowrap">18:30〜20:30</td>
             <td>麹体験講座（塩麹・醤油麹・甘麹）</td>
             <td style="text-align:right"><span class="t-price">¥4,950<span class="tax-note">（税込）</span></span></td>
             <td style="text-align:center"><span class="tag t-entry">麹体験</span></td>
+          </tr>
+          <tr>
+            <td>7/8（水）</td>
+            <td style="white-space:nowrap">18:30〜20:30</td>
+            <td>キムチ麴</td>
+            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span></td>
+            <td style="text-align:center"><span class="tag t-open">オープン記念</span></td>
+          </tr>
+          <tr>
+            <td>7/13（月）</td>
+            <td style="white-space:nowrap">11:00〜14:00</td>
+            <td>くずプリン</td>
+            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span></td>
+            <td style="text-align:center"><span class="tag t-special">季節の特別発酵講座</span></td>
+          </tr>
+          <tr>
+            <td>7/14（火）</td>
+            <td style="white-space:nowrap">11:00〜14:00</td>
+            <td>キムチ麴</td>
+            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span></td>
+            <td style="text-align:center"><span class="tag t-open">オープン記念</span></td>
           </tr>
         </tbody>
       </table>
@@ -1306,7 +1415,7 @@ footer{
           <div class="sea-month">JULY</div>
           <div class="sea-num">7月</div>
           <div class="sea-menu">くずプリン</div>
-          <div class="sea-time">🕐 11:00〜14:00</div>
+          <div class="sea-time">📅 7/13（月）🕐 11:00〜14:00</div>
           <div class="sea-price">¥6,600<span class="tax-note">（税込）</span></div>
         </div>
       </div>
@@ -1373,6 +1482,60 @@ footer{
     <ellipse cx="100" cy="12" rx="13" ry="4" fill="#8B5E3C" opacity="0.16" transform="rotate(-20,100,12)"/>
     <ellipse cx="450" cy="12" rx="13" ry="4" fill="#8B5E3C" opacity="0.16" transform="rotate(20,450,12)"/>
     <circle cx="300" cy="20" r="2" fill="#8B5E3C" opacity="0.28"/>
+  </svg>
+</div>
+
+<!-- ===== FERMENTATION LUNCH ===== -->
+<section class="flunch" id="flunch">
+  <div class="inner">
+    <div class="s-label">
+      <svg width="10" height="14" viewBox="0 0 10 14"><ellipse cx="5" cy="8" rx="4" ry="7" fill="#8B5E3C" opacity="0.35" transform="rotate(-15,5,8)"/></svg>
+      Fermentation Lunch
+      <svg width="10" height="14" viewBox="0 0 10 14"><ellipse cx="5" cy="8" rx="4" ry="7" fill="#8B5E3C" opacity="0.35" transform="rotate(15,5,8)"/></svg>
+    </div>
+    <h2 class="s-title">発酵ランチ</h2>
+    <span class="s-deco">予約制・限定6名様</span>
+    <p class="s-lead">本格手打ち蕎麦 福籠で人気を集めた発酵ランチが、ふくろうの台所にて予約制でスタートします。<br>自家製の発酵調味料と旬の食材を使った、身体にやさしいひとときをどうぞ。</p>
+
+    <div class="flunch-card">
+      <div class="flunch-img-wrap">
+        <img src="flunch-main.jpg" alt="花かご発酵ランチ" onerror="this.style.display='none'">
+      </div>
+      <div class="flunch-body">
+        <div class="flunch-menu-title">🌿 花かご発酵ランチ</div>
+        <p class="flunch-desc">自家製の発酵調味料を使い、季節の食材を活かしたお膳。<br>デザート・食後のお飲み物付き。</p>
+
+        <div class="flunch-date-box">
+          <div class="flunch-date-label">7月の開催日</div>
+          <div class="flunch-date">7/20（月・祝）11:30 open</div>
+          <div class="flunch-limit">定員6名様・完全予約制</div>
+        </div>
+
+        <div class="flunch-price-wrap">
+          <div class="flunch-price-row">
+            <span class="flunch-price-label">生徒さん価格</span>
+            <span class="flunch-price">¥2,500<span class="tax-note">（税込）</span></span>
+          </div>
+          <div class="flunch-price-note">※ふくろうの台所・糀日和の生徒さん対象</div>
+          <div class="flunch-price-row" style="margin-top:8px">
+            <span class="flunch-price-label">一般価格</span>
+            <span class="flunch-price">¥3,000<span class="tax-note">（税込）</span></span>
+          </div>
+        </div>
+
+        <a href="https://lin.ee/WyI7Hk6" target="_blank" class="flunch-btn">LINEでご予約はこちら</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- botanical divider -->
+<div class="b-div" style="background:var(--bg);">
+  <svg viewBox="0 0 600 44" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,22 Q150,8 300,22 Q450,36 600,22" stroke="#C4956A" stroke-width="0.7" fill="none" opacity="0.4"/>
+    <ellipse cx="70" cy="14" rx="14" ry="4.5" fill="#8B5E3C" opacity="0.18" transform="rotate(-28,70,14)"/>
+    <ellipse cx="530" cy="14" rx="14" ry="4.5" fill="#8B5E3C" opacity="0.18" transform="rotate(28,530,14)"/>
+    <circle cx="300" cy="22" r="2.5" fill="#8B5E3C" opacity="0.35"/>
   </svg>
 </div>
 
