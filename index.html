@@ -473,6 +473,8 @@ section{padding:72px 24px;}
   vertical-align:middle;
 }
 .sch-table tr:hover td{background:var(--bg);}
+.sch-table tr.past td{text-decoration:line-through;color:#B0A090;opacity:0.6;}
+.sch-table tr.past .t-price{color:#B0A090;}
 .tag{
   display:inline-block;font-size:10px;
   letter-spacing:0.08em;
@@ -1370,28 +1372,28 @@ footer{
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr class="past">
             <td>5/27（水）・6/19（金）</td>
             <td style="white-space:nowrap">11:00〜14:00</td>
             <td>フルーツ酵素</td>
             <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span></td>
             <td style="text-align:center"><span class="tag t-open">オープン記念</span></td>
           </tr>
-          <tr>
+          <tr class="past">
             <td>6/10（水）</td>
             <td style="white-space:nowrap">11:00〜14:00</td>
             <td>トマト麹</td>
             <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span></td>
             <td style="text-align:center"><span class="tag t-open">オープン記念</span></td>
           </tr>
-          <tr>
+          <tr class="past">
             <td>6/17（水）</td>
             <td style="white-space:nowrap">18:30〜20:30</td>
             <td>トマト麹</td>
             <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span></td>
             <td style="text-align:center"><span class="tag t-open">オープン記念</span></td>
           </tr>
-          <tr>
+          <tr class="past">
             <td>6/13（土）</td>
             <td style="white-space:nowrap">18:30〜20:30</td>
             <td>フルーツ酵素</td>
