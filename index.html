@@ -554,79 +554,114 @@ section{padding:72px 24px;}
 
 /* ===== SEASONAL ===== */
 /* ===== SPECIAL LESSON ===== */
-.special-lesson{background:linear-gradient(135deg,#FFF8EE 0%,#FFF3DC 100%);border-top:2px solid #E8A020;border-bottom:2px solid #E8A020;}
+.special-lesson{
+  background:linear-gradient(160deg,#2C1A0E 0%,#4A2C10 50%,#2C1A0E 100%);
+  border-top:3px solid #C8960A;
+  border-bottom:3px solid #C8960A;
+}
+.special-lesson .inner{position:relative;}
 .sl-badge{
   text-align:center;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(11px,1.5vw,13px);
+  letter-spacing:0.45em;
+  color:#C8960A;
+  font-weight:600;
+  margin-bottom:10px;
+  text-transform:uppercase;
+}
+.sl-badge::before,.sl-badge::after{
+  content:'—— ';
+  color:#C8960A;
+  opacity:0.6;
+}
+.sl-heading{
+  text-align:center;
   font-family:'Noto Serif JP',serif;
-  font-size:13px;letter-spacing:0.2em;
-  color:#B85C00;font-weight:700;
-  margin-bottom:16px;
+  font-size:clamp(22px,3.5vw,34px);
+  font-weight:700;
+  color:#F5E8D0;
+  letter-spacing:0.12em;
+  margin-bottom:32px;
+  line-height:1.4;
+}
+.sl-heading span{
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(11px,1.2vw,13px);
+  letter-spacing:0.4em;
+  color:#C8960A;
+  font-weight:400;
+  margin-bottom:8px;
 }
 .sl-card{
-  background:var(--white);
-  border-radius:8px;
-  padding:32px;
-  border:1.5px solid #F0C060;
-  box-shadow:0 4px 24px rgba(184,92,0,0.10);
+  background:rgba(255,248,230,0.06);
+  border-radius:4px;
+  padding:40px;
+  border:1px solid rgba(200,150,10,0.35);
+  box-shadow:0 8px 40px rgba(0,0,0,0.4), inset 0 0 60px rgba(200,150,10,0.04);
 }
 .sl-tag{
   display:inline-block;
-  background:#B85C00;
-  color:#fff;
+  background:transparent;
+  color:#C8960A;
   font-size:12px;font-weight:700;
-  letter-spacing:0.1em;
-  padding:4px 14px;
+  letter-spacing:0.15em;
+  padding:5px 18px;
+  border:1px solid #C8960A;
   border-radius:20px;
-  margin-bottom:14px;
+  margin-bottom:16px;
 }
 .sl-title{
   font-family:'Noto Serif JP',serif;
-  font-size:clamp(20px,3vw,28px);
+  font-size:clamp(22px,3.5vw,36px);
   font-weight:700;
-  color:#3B2314;
-  line-height:1.5;
-  margin-bottom:10px;
+  color:#F5E8D0;
+  line-height:1.6;
+  margin-bottom:12px;
 }
 .sl-sub{
-  font-size:14px;
-  color:var(--brown-m);
-  line-height:1.8;
-  margin-bottom:20px;
+  font-size:15px;
+  color:rgba(245,232,208,0.75);
+  line-height:1.9;
+  margin-bottom:24px;
 }
 .sl-detail-row{
   display:flex;flex-wrap:wrap;gap:12px;
-  margin-bottom:20px;
-}
-.sl-detail-item{
-  background:#FFF3DC;
-  border:1px solid #F0C060;
-  border-radius:20px;
-  padding:5px 14px;
-  font-size:13px;font-weight:600;
-  color:#3B2314;
-}
-.sl-ticket-note{
-  background:#FFF8EE;
-  border-left:3px solid #E8A020;
-  padding:12px 16px;
-  border-radius:0 4px 4px 0;
-  font-size:13px;
-  color:var(--brown);
-  line-height:1.8;
   margin-bottom:24px;
 }
+.sl-detail-item{
+  background:rgba(200,150,10,0.12);
+  border:1px solid rgba(200,150,10,0.4);
+  border-radius:20px;
+  padding:6px 16px;
+  font-size:14px;font-weight:600;
+  color:#F5E8D0;
+}
+.sl-ticket-note{
+  background:rgba(200,150,10,0.08);
+  border-left:3px solid #C8960A;
+  padding:14px 18px;
+  border-radius:0 4px 4px 0;
+  font-size:14px;
+  color:rgba(245,232,208,0.85);
+  line-height:1.9;
+  margin-bottom:28px;
+}
+.sl-ticket-note strong{color:#C8960A;}
 .sl-btn{
   display:inline-block;
-  background:#B85C00;
-  color:#fff;
-  padding:13px 28px;
+  background:transparent;
+  color:#C8960A;
+  border:2px solid #C8960A;
+  padding:14px 36px;
   border-radius:4px;
   font-size:15px;font-weight:700;
-  letter-spacing:0.08em;
+  letter-spacing:0.12em;
   text-decoration:none;
   transition:background 0.2s;
 }
-.sl-btn:hover{background:#E8A020;}
+.sl-btn:hover{background:#C8960A;color:#2C1A0E;}
 
 /* ===== FERMENTATION LUNCH ===== */
 .flunch{background:#E8EDE4;}
@@ -1404,7 +1439,8 @@ footer{
 <!-- ===== SPECIAL LESSON ===== -->
 <section class="special-lesson" id="special-lesson">
   <div class="inner">
-    <div class="sl-badge">🌻 夏の特別開催</div>
+    <div class="sl-badge">Special Lesson</div>
+    <h2 class="sl-heading"><span>Ticket Holders Only</span>チケット購入者<br>特別講座</h2>
     <div class="sl-card">
       <div class="sl-left">
         <div class="sl-tag">チケット購入者様限定</div>
