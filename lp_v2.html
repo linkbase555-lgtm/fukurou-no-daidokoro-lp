@@ -553,6 +553,81 @@ section{padding:72px 24px;}
 }
 
 /* ===== SEASONAL ===== */
+/* ===== SPECIAL LESSON ===== */
+.special-lesson{background:linear-gradient(135deg,#FFF8EE 0%,#FFF3DC 100%);border-top:2px solid #E8A020;border-bottom:2px solid #E8A020;}
+.sl-badge{
+  text-align:center;
+  font-family:'Noto Serif JP',serif;
+  font-size:13px;letter-spacing:0.2em;
+  color:#B85C00;font-weight:700;
+  margin-bottom:16px;
+}
+.sl-card{
+  background:var(--white);
+  border-radius:8px;
+  padding:32px;
+  border:1.5px solid #F0C060;
+  box-shadow:0 4px 24px rgba(184,92,0,0.10);
+}
+.sl-tag{
+  display:inline-block;
+  background:#B85C00;
+  color:#fff;
+  font-size:12px;font-weight:700;
+  letter-spacing:0.1em;
+  padding:4px 14px;
+  border-radius:20px;
+  margin-bottom:14px;
+}
+.sl-title{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(20px,3vw,28px);
+  font-weight:700;
+  color:#3B2314;
+  line-height:1.5;
+  margin-bottom:10px;
+}
+.sl-sub{
+  font-size:14px;
+  color:var(--brown-m);
+  line-height:1.8;
+  margin-bottom:20px;
+}
+.sl-detail-row{
+  display:flex;flex-wrap:wrap;gap:12px;
+  margin-bottom:20px;
+}
+.sl-detail-item{
+  background:#FFF3DC;
+  border:1px solid #F0C060;
+  border-radius:20px;
+  padding:5px 14px;
+  font-size:13px;font-weight:600;
+  color:#3B2314;
+}
+.sl-ticket-note{
+  background:#FFF8EE;
+  border-left:3px solid #E8A020;
+  padding:12px 16px;
+  border-radius:0 4px 4px 0;
+  font-size:13px;
+  color:var(--brown);
+  line-height:1.8;
+  margin-bottom:24px;
+}
+.sl-btn{
+  display:inline-block;
+  background:#B85C00;
+  color:#fff;
+  padding:13px 28px;
+  border-radius:4px;
+  font-size:15px;font-weight:700;
+  letter-spacing:0.08em;
+  text-decoration:none;
+  transition:background 0.2s;
+}
+.sl-btn:hover{background:#E8A020;}
+
 /* ===== FERMENTATION LUNCH ===== */
 .flunch{background:#E8EDE4;}
 .flunch .s-label{color:#4A6741;}
@@ -1323,6 +1398,43 @@ footer{
     <circle cx="300" cy="20" r="3" fill="#8B5E3C" opacity="0.3"/>
     <circle cx="292" cy="20" r="1.5" fill="#8B5E3C" opacity="0.2"/>
     <circle cx="308" cy="20" r="1.5" fill="#8B5E3C" opacity="0.2"/>
+  </svg>
+</div>
+
+<!-- ===== SPECIAL LESSON ===== -->
+<section class="special-lesson" id="special-lesson">
+  <div class="inner">
+    <div class="sl-badge">🌻 夏の特別開催</div>
+    <div class="sl-card">
+      <div class="sl-left">
+        <div class="sl-tag">チケット購入者様限定</div>
+        <h3 class="sl-title">冷凍フルーツで作る<br>麹かき氷シロップ教室</h3>
+        <p class="sl-sub">砂糖不使用 ／ お好みの冷凍フルーツと<br>麹の甘みだけで作る発酵かき氷シロップ</p>
+        <div class="sl-detail-row">
+          <span class="sl-detail-item">📅 2026年 7/24（金）</span>
+          <span class="sl-detail-item">🕐 11:00〜14:00</span>
+          <span class="sl-detail-item">👥 定員6名</span>
+          <span class="sl-detail-item">🍱 お食事付き</span>
+        </div>
+        <div class="sl-ticket-note">
+          <strong>参加費：発酵習慣講座 共通チケット1枚</strong><br>
+          <span>チケット購入済みの方、または当日チケット購入予定の方が対象です。</span>
+        </div>
+        <a href="https://lin.ee/WyI7Hk6" target="_blank" class="sl-btn">LINEでお申し込み・お問い合わせ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- botanical divider -->
+<div class="b-div" style="background:var(--bg-beige);">
+  <svg viewBox="0 0 600 40" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="20" x2="600" y2="20" stroke="#E8C99A" stroke-width="0.6" opacity="0.6"/>
+    <ellipse cx="120" cy="14" rx="15" ry="5" fill="#8B5E3C" opacity="0.18" transform="rotate(-22,120,14)"/>
+    <ellipse cx="160" cy="26" rx="12" ry="4" fill="#8B5E3C" opacity="0.14" transform="rotate(18,160,26)"/>
+    <ellipse cx="440" cy="14" rx="15" ry="5" fill="#8B5E3C" opacity="0.18" transform="rotate(22,440,14)"/>
+    <ellipse cx="480" cy="26" rx="12" ry="4" fill="#8B5E3C" opacity="0.14" transform="rotate(-18,480,26)"/>
+    <circle cx="300" cy="20" r="3" fill="#8B5E3C" opacity="0.3"/>
   </svg>
 </div>
 
