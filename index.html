@@ -451,6 +451,11 @@ section{padding:72px 24px;}
   width:100%;height:180px;
   object-fit:cover;display:block;
 }
+.sch-photos-wide{grid-template-columns:repeat(2,1fr);}
+.sch-photos-wide .sch-photo-item img{height:auto;aspect-ratio:2/1;}
+@media(max-width:640px){
+  .sch-photos-wide{grid-template-columns:1fr;}
+}
 .sch-photo-item span{
   display:block;
   text-align:center;
@@ -1495,6 +1500,25 @@ footer{
       <div class="sch-photo-item">
         <img src="wanchan-gohan.png.jpg" alt="わんちゃんのための手作り発酵ごはん">
         <span>わんちゃんのための手作り発酵ごはん</span>
+      </div>
+    </div>
+
+    <div class="sch-photos sch-photos-wide">
+      <div class="sch-photo-item">
+        <img src="nov-hatomugi-kimchi.jpg" alt="薬膳ハトムギ麹漬物＆発酵麹キムチ">
+        <span>薬膳ハトムギ麹漬物＆発酵麹キムチ</span>
+      </div>
+      <div class="sch-photo-item">
+        <img src="nov-hatomugi-shiokoji.jpg" alt="薬膳ハトムギ麹漬物＆塩麴">
+        <span>薬膳ハトムギ麹漬物＆塩麴</span>
+      </div>
+      <div class="sch-photo-item">
+        <img src="nov-kimchi-amakoji.jpg" alt="発酵麹キムチ＆甘麹">
+        <span>発酵麹キムチ＆甘麹</span>
+      </div>
+      <div class="sch-photo-item">
+        <img src="nov-butaman-anpan.jpg" alt="豚まん＆発酵あんこの米粉あんぱん">
+        <span>豚まん＆発酵あんこの米粉あんぱん</span>
       </div>
     </div>
 
