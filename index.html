@@ -451,10 +451,14 @@ section{padding:72px 24px;}
   width:100%;height:180px;
   object-fit:cover;display:block;
 }
+.sch-photos-four{grid-template-columns:repeat(4,1fr);}
+.sch-photos-four .sch-photo-item img{height:auto;aspect-ratio:1/1;}
+.sch-photos-four .sch-photo-item img.top{object-position:center 25%;}
 .sch-photos-wide{grid-template-columns:repeat(2,1fr);}
 .sch-photos-wide .sch-photo-item img{height:auto;aspect-ratio:2/1;}
 @media(max-width:640px){
   .sch-photos-wide{grid-template-columns:1fr;}
+  .sch-photos-four{grid-template-columns:repeat(2,1fr);}
 }
 .sch-photo-item span{
   display:block;
@@ -1485,23 +1489,8 @@ footer{
       <svg width="10" height="14" viewBox="0 0 10 14"><ellipse cx="5" cy="8" rx="4" ry="7" fill="#8B5E3C" opacity="0.35" transform="rotate(15,5,8)"/></svg>
     </div>
     <h2 class="s-title">レッスン日程</h2>
-    <span class="s-deco">10月・11月</span>
+    <span class="s-deco">11月・12月</span>
     <p class="s-lead">各回定員6名・ワークショップ＋レシピ＋食事込み・<strong>エプロン持参</strong>。</p>
-
-    <div class="sch-photos">
-      <div class="sch-photo-item">
-        <img src="111.png" alt="ハト麦床★漬物講座">
-        <span>ハト麦床★漬物</span>
-      </div>
-      <div class="sch-photo-item">
-        <img src="bagel.png" alt="米粉の麴ベーグル">
-        <span>米粉の麴ベーグル</span>
-      </div>
-      <div class="sch-photo-item">
-        <img src="wanchan-gohan.png.jpg" alt="わんちゃんのための手作り発酵ごはん">
-        <span>わんちゃんのための手作り発酵ごはん</span>
-      </div>
-    </div>
 
     <div class="sch-photos sch-photos-wide">
       <div class="sch-photo-item">
@@ -1522,6 +1511,25 @@ footer{
       </div>
     </div>
 
+    <div class="sch-photos sch-photos-four">
+      <div class="sch-photo-item">
+        <img src="dec-mosaic-sushi.webp" alt="彩りモザイク寿司">
+        <span>彩りモザイク寿司</span>
+      </div>
+      <div class="sch-photo-item">
+        <img src="dec-roastbeef-kinton.webp" alt="ローストビーフ＆フルーツきんとん">
+        <span>ローストビーフ＆フルーツきんとん</span>
+      </div>
+      <div class="sch-photo-item">
+        <img src="dec-kaburazushi-konbumaki.webp" alt="かぶら寿司＆ししゃも昆布巻き">
+        <span>かぶら寿司＆ししゃも昆布巻き</span>
+      </div>
+      <div class="sch-photo-item">
+        <img class="top" src="dec-shimenawa.jpg" alt="しめ縄づくり">
+        <span>しめ縄づくり</span>
+      </div>
+    </div>
+
     <div style="overflow-x:auto">
       <table class="sch-table">
         <thead>
@@ -1534,55 +1542,6 @@ footer{
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>10/1（木）</td>
-            <td style="white-space:nowrap">11:00〜14:00</td>
-            <td>ひよこ豆味噌づくり</td>
-            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span><br><small style="color:var(--brown-l);">またはチケット1枚</small></td>
-            <td style="text-align:center"><span class="tag t-special">季節の特別発酵講座</span></td>
-          </tr>
-          <tr>
-            <td>10/10（土）</td>
-            <td style="white-space:nowrap">18:30〜20:30</td>
-            <td>ひよこ豆味噌づくり</td>
-            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span><br><small style="color:var(--brown-l);">またはチケット1枚</small></td>
-            <td style="text-align:center"><span class="tag t-special">季節の特別発酵講座</span></td>
-          </tr>
-          <tr>
-            <td>10/14（水）</td>
-            <td style="white-space:nowrap">11:00〜14:00</td>
-            <td>ハト麦床★漬物講座<br><small style="color:var(--brown-l);">※飲食店オーナー様・同業者様はご遠慮ください</small></td>
-            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span><br><small style="color:var(--brown-l);">またはチケット1枚</small></td>
-            <td style="text-align:center"><span class="tag t-entry">発酵習慣講座</span></td>
-          </tr>
-          <tr>
-            <td>10/16（金）</td>
-            <td style="white-space:nowrap">18:30〜20:30</td>
-            <td>ハト麦床★漬物講座<br><small style="color:var(--brown-l);">※飲食店オーナー様・同業者様はご遠慮ください</small></td>
-            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span><br><small style="color:var(--brown-l);">またはチケット1枚</small></td>
-            <td style="text-align:center"><span class="tag t-entry">発酵習慣講座</span></td>
-          </tr>
-          <tr>
-            <td>10/22（木）</td>
-            <td style="white-space:nowrap">11:00〜14:00</td>
-            <td>米粉の麴ベーグル<br><small style="color:var(--brown-l);">※飲食店オーナー様・同業者様はご遠慮ください</small></td>
-            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span><br><small style="color:var(--brown-l);">またはチケット1枚</small></td>
-            <td style="text-align:center"><span class="tag t-entry">発酵習慣講座</span></td>
-          </tr>
-          <tr>
-            <td>10/24（土）</td>
-            <td style="white-space:nowrap">18:30〜20:30</td>
-            <td>米粉の麴ベーグル<br><small style="color:var(--brown-l);">※飲食店オーナー様・同業者様はご遠慮ください</small></td>
-            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span><br><small style="color:var(--brown-l);">またはチケット1枚</small></td>
-            <td style="text-align:center"><span class="tag t-entry">発酵習慣講座</span></td>
-          </tr>
-          <tr>
-            <td>10/28（水）</td>
-            <td style="white-space:nowrap">11:00〜14:00</td>
-            <td>わんちゃんのための手作り発酵ごはん</td>
-            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span><br><small style="color:var(--brown-l);">またはチケット1枚</small></td>
-            <td style="text-align:center"><span class="tag t-entry">発酵習慣講座</span></td>
-          </tr>
           <tr>
             <td>11/3（火・祝）</td>
             <td style="white-space:nowrap">11:00〜14:00</td>
@@ -1639,6 +1598,62 @@ footer{
             <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span></td>
             <td style="text-align:center"><span class="tag t-ticket">新規さん対象</span></td>
           </tr>
+          <tr>
+            <td>12/1（火）</td>
+            <td style="white-space:nowrap">11:00〜14:00</td>
+            <td>彩りモザイク寿司<br><small style="color:var(--brown-l);">今話題のローゼルを使った、クリスマス・お正月にぴったりのお寿司</small></td>
+            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span><br><small style="color:var(--brown-l);">またはチケット1枚</small></td>
+            <td style="text-align:center"><span class="tag t-entry">発酵習慣講座</span></td>
+          </tr>
+          <tr>
+            <td>12/5（土）</td>
+            <td style="white-space:nowrap">18:30〜20:30</td>
+            <td>彩りモザイク寿司<br><small style="color:var(--brown-l);">今話題のローゼルを使った、クリスマス・お正月にぴったりのお寿司</small></td>
+            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span><br><small style="color:var(--brown-l);">またはチケット1枚</small></td>
+            <td style="text-align:center"><span class="tag t-entry">発酵習慣講座</span></td>
+          </tr>
+          <tr>
+            <td>12/8（火）</td>
+            <td style="white-space:nowrap">11:00〜14:00</td>
+            <td>ローストビーフ＆フルーツきんとん<br><small style="color:var(--brown-l);">味噌を使った、コクのある和風ローストビーフ</small></td>
+            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span><br><small style="color:var(--brown-l);">またはチケット1枚</small></td>
+            <td style="text-align:center"><span class="tag t-entry">発酵習慣講座</span></td>
+          </tr>
+          <tr>
+            <td>12/12（土）</td>
+            <td style="white-space:nowrap">18:30〜20:30</td>
+            <td>ローストビーフ＆フルーツきんとん<br><small style="color:var(--brown-l);">味噌を使った、コクのある和風ローストビーフ</small></td>
+            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span><br><small style="color:var(--brown-l);">またはチケット1枚</small></td>
+            <td style="text-align:center"><span class="tag t-entry">発酵習慣講座</span></td>
+          </tr>
+          <tr>
+            <td>12/19（土）</td>
+            <td style="white-space:nowrap">18:30〜20:30</td>
+            <td>かぶら寿司＆ししゃも昆布巻き<br><small style="color:var(--brown-l);">お節料理におすすめの2品。麴の力でおいしさアップ！</small></td>
+            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span><br><small style="color:var(--brown-l);">またはチケット1枚</small></td>
+            <td style="text-align:center"><span class="tag t-entry">発酵習慣講座</span></td>
+          </tr>
+          <tr>
+            <td>12/22（火）</td>
+            <td style="white-space:nowrap">11:00〜14:00</td>
+            <td>かぶら寿司＆ししゃも昆布巻き<br><small style="color:var(--brown-l);">お節料理におすすめの2品。麴の力でおいしさアップ！</small></td>
+            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span><br><small style="color:var(--brown-l);">またはチケット1枚</small></td>
+            <td style="text-align:center"><span class="tag t-entry">発酵習慣講座</span></td>
+          </tr>
+          <tr>
+            <td>12/26（土）</td>
+            <td style="white-space:nowrap">18:30〜20:30</td>
+            <td>しめ縄づくり＆軽食</td>
+            <td style="text-align:right"><span class="t-price">¥5,500<span class="tax-note">（税込）</span></span></td>
+            <td style="text-align:center"><span class="tag t-special">季節の特別発酵講座</span></td>
+          </tr>
+          <tr>
+            <td>12/29（火）</td>
+            <td style="white-space:nowrap">11:00〜14:00</td>
+            <td>しめ縄づくり＆花籠ランチ</td>
+            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span></td>
+            <td style="text-align:center"><span class="tag t-special">季節の特別発酵講座</span></td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -1666,19 +1681,9 @@ footer{
       <svg width="10" height="14" viewBox="0 0 10 14"><ellipse cx="5" cy="8" rx="4" ry="7" fill="#8B5E3C" opacity="0.35" transform="rotate(15,5,8)"/></svg>
     </div>
     <h2 class="s-title">季節の特別発酵講座</h2>
-    <span class="s-deco">10月 → 12月</span>
+    <span class="s-deco">11月 → 12月</span>
     <p class="s-lead">季節の食材と発酵を掛け合わせた特別レッスン。毎回内容が変わります。</p>
     <div class="sea-grid">
-      <div class="sea-card">
-        <div class="sea-img"><img src="sea-oct.png.jpg" alt="ひよこ豆味噌づくり"></div>
-        <div class="sea-body">
-          <div class="sea-month">OCTOBER</div>
-          <div class="sea-num">10月</div>
-          <div class="sea-menu">ひよこ豆味噌づくり</div>
-          <div class="sea-time">📅 10/1（木）🕐 11:00〜14:00<br>📅 10/10（土）🕕 18:30〜20:30</div>
-          <div class="sea-price">¥6,600<span class="tax-note">（税込）</span></div>
-        </div>
-      </div>
       <div class="sea-card">
         <div class="sea-img"><img src="sea-nov.png.png" alt="新蕎麦食べ比べ＆バラ落語"></div>
         <div class="sea-body">
@@ -1687,18 +1692,18 @@ footer{
           <div class="sea-menu">新蕎麦食べ比べ＆バラ落語</div>
           <div class="sea-time">📅 11/21（土）🕕 18:30〜</div>
           <div class="sea-loc">📍 本格手打ちそば福籠店舗にて</div>
-          <div class="sea-price"><small style="font-size:12px;color:var(--brown-l);">一般 ¥4,500 →</small><br>生徒さんご招待価格 ¥3,300<span class="tax-note">（税込）</span><br><small style="font-size:12px;color:var(--brown-l);">※レッスン券のスタンプがたまっている方は ¥2,200（税込）＋お料理無料プレゼント！<br>申し込み締め切り：11/7</small></div>
+          <div class="sea-price"><small style="font-size:12px;color:var(--brown-l);">一般 ¥4,500 →</small><br>生徒さんご招待価格 ¥3,300<span class="tax-note">（税込）</span><br><small style="font-size:12px;color:var(--brown-l);">※レッスン券のスタンプがたまっている方は ¥2,200（税込）＋お料理無料ご招待！<br>申し込み締め切り：11/7</small></div>
           <a href="https://lin.ee/WyI7Hk6" target="_blank" class="flunch-mini-btn">LINEで申し込む</a>
         </div>
       </div>
       <div class="sea-card">
-        <div class="sea-img"><img src="menu-osechi.png.jpg" alt="発酵おせち"></div>
+        <div class="sea-img"><img src="dec-shimenawa.jpg" alt="しめ縄づくり" style="object-position:center 25%;"></div>
         <div class="sea-body">
           <div class="sea-month">DECEMBER</div>
           <div class="sea-num">12月</div>
-          <div class="sea-menu">発酵おせち</div>
-          <div class="sea-time">🕐 11:00〜14:00</div>
-          <div class="sea-price">¥6,600<span class="tax-note">（税込）</span></div>
+          <div class="sea-menu">しめ縄づくり</div>
+          <div class="sea-time">📅 12/26（土）🕕 18:30〜20:30（軽食付き）<br>📅 12/29（火）🕐 11:00〜14:00（花籠ランチ付き）</div>
+          <div class="sea-price">夜 ¥5,500／昼 ¥6,600<span class="tax-note">（税込）</span></div>
         </div>
       </div>
     </div>
@@ -1736,22 +1741,10 @@ footer{
         <p class="flunch-desc">自家製の発酵調味料を使い、季節の食材を活かしたお膳。<br>デザート・食後のお飲み物付き。</p>
 
         <div class="flunch-date-box">
-          <div class="flunch-date-label">10月の開催日</div>
-          <div class="flunch-date">10/29（木）11:30 open</div>
-          <div class="flunch-limit">1日1組限定！（定員：3〜6名）・完全予約制</div>
-          <div class="flunch-accept">🌿 ただいま受付中！LINEよりお申し込みください。</div>
-        </div>
-
-        <div class="flunch-date-box" style="margin-top:12px;">
-          <div class="flunch-date-label">10/15（木）限定 特別コラボ企画</div>
-          <div class="flunch-date">わたしを知る、生き方講座＆花籠ランチ</div>
-          <div class="flunch-limit">〜マヤ暦・四柱推命・動物占い・五行・食と発酵、5つの視点で自分を知る講座＆贅沢花籠ランチ〜</div>
+          <div class="flunch-date-label">12/29（火）限定 特別企画</div>
+          <div class="flunch-date">しめ縄づくり＆花籠ランチ</div>
           <div style="font-size:13px;color:var(--text);line-height:1.8;margin-top:8px;">
-            9:45　受付・お茶タイム<br>
-            10:00〜11:30　わたしを知る、生き方講座<br>
-            11:45〜13:00　発酵料理を囲んで花籠ランチタイム＆シェアタイム<br>
-            参加費　¥4,500<span class="tax-note">（税込）</span>（講座＋発酵料理の食事付き）<br>
-            定員　6名様（要予約）／持ち物　筆記用具
+            11:00〜14:00　参加費　¥6,600<span class="tax-note">（税込）</span>（しめ縄づくり＋花籠ランチ）
           </div>
           <div class="flunch-accept" style="margin-top:8px;">🌿 ただいま受付中！LINEよりお申し込みください。</div>
           <a href="https://lin.ee/WyI7Hk6" target="_blank" class="flunch-mini-btn">この講座＋ランチを予約する</a>
