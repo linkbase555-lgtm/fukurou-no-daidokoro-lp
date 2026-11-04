@@ -484,6 +484,30 @@ section{padding:72px 24px;}
 .sch-table tr:hover td{background:var(--bg);}
 .sch-table tr.past td{text-decoration:line-through;color:#B0A090;opacity:0.6;}
 .sch-table tr.past .t-price{color:#B0A090;}
+@media(max-width:640px){
+  .sch-table thead{display:none;}
+  .sch-table,.sch-table tbody{display:block;width:100%;}
+  .sch-table tr{
+    display:grid;grid-template-columns:auto 1fr;
+    gap:4px 12px;align-items:center;
+    background:var(--white);
+    border-bottom:1px solid var(--accent);
+    padding:12px 14px;
+  }
+  .sch-table td{
+    display:block;padding:0;border:none;background:transparent;
+    white-space:normal !important;
+  }
+  .sch-table tr:hover td{background:transparent;}
+  .sch-table td:nth-child(1){grid-column:1;font-weight:700;font-size:14px;color:var(--brown);}
+  .sch-table td:nth-child(2){grid-column:2;color:var(--text-l);}
+  .sch-table td:nth-child(3){grid-column:1/-1;font-size:14px;line-height:1.6;padding:4px 0;}
+  .sch-table td:nth-child(3) small{display:block;font-size:11.5px;line-height:1.6;}
+  .sch-table td:nth-child(3) br,.sch-table td:nth-child(4) br{display:none;}
+  .sch-table td:nth-child(4) small{display:block;font-size:11px;line-height:1.5;}
+  .sch-table td:nth-child(4){grid-column:1;text-align:left !important;}
+  .sch-table td:nth-child(5){grid-column:2;text-align:right !important;}
+}
 .tag{
   display:inline-block;font-size:10px;
   letter-spacing:0.08em;
@@ -1601,42 +1625,42 @@ footer{
           <tr>
             <td>12/1（火）</td>
             <td style="white-space:nowrap">11:00〜14:00</td>
-            <td>彩りモザイク寿司<br><small style="color:var(--brown-l);">今話題のローゼルを使った、クリスマス・お正月にぴったりのお寿司</small></td>
+            <td>彩りモザイク寿司<br><small style="color:var(--brown-l);">今話題のローゼルを使った、クリスマス・お正月にぴったりのお寿司</small><br><small style="color:var(--brown-l);">発酵ランチ付き</small></td>
             <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span><br><small style="color:var(--brown-l);">またはチケット1枚</small></td>
             <td style="text-align:center"><span class="tag t-entry">発酵習慣講座</span></td>
           </tr>
           <tr>
             <td>12/5（土）</td>
             <td style="white-space:nowrap">18:30〜20:30</td>
-            <td>彩りモザイク寿司<br><small style="color:var(--brown-l);">今話題のローゼルを使った、クリスマス・お正月にぴったりのお寿司</small></td>
-            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span><br><small style="color:var(--brown-l);">またはチケット1枚</small></td>
+            <td>彩りモザイク寿司<br><small style="color:var(--brown-l);">今話題のローゼルを使った、クリスマス・お正月にぴったりのお寿司</small><br><small style="color:var(--brown-l);">軽食付き</small></td>
+            <td style="text-align:right"><span class="t-price">¥5,500<span class="tax-note">（税込）</span></span><br><small style="color:var(--brown-l);">またはチケット1枚</small></td>
             <td style="text-align:center"><span class="tag t-entry">発酵習慣講座</span></td>
           </tr>
           <tr>
             <td>12/8（火）</td>
             <td style="white-space:nowrap">11:00〜14:00</td>
-            <td>ローストビーフ＆フルーツきんとん<br><small style="color:var(--brown-l);">味噌を使った、コクのある和風ローストビーフ</small></td>
+            <td>ローストビーフ＆フルーツきんとん<br><small style="color:var(--brown-l);">味噌を使った、コクのある和風ローストビーフ</small><br><small style="color:var(--brown-l);">発酵ランチ付き</small></td>
             <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span><br><small style="color:var(--brown-l);">またはチケット1枚</small></td>
             <td style="text-align:center"><span class="tag t-entry">発酵習慣講座</span></td>
           </tr>
           <tr>
             <td>12/12（土）</td>
             <td style="white-space:nowrap">18:30〜20:30</td>
-            <td>ローストビーフ＆フルーツきんとん<br><small style="color:var(--brown-l);">味噌を使った、コクのある和風ローストビーフ</small></td>
-            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span><br><small style="color:var(--brown-l);">またはチケット1枚</small></td>
+            <td>ローストビーフ＆フルーツきんとん<br><small style="color:var(--brown-l);">味噌を使った、コクのある和風ローストビーフ</small><br><small style="color:var(--brown-l);">軽食付き</small></td>
+            <td style="text-align:right"><span class="t-price">¥5,500<span class="tax-note">（税込）</span></span><br><small style="color:var(--brown-l);">またはチケット1枚</small></td>
             <td style="text-align:center"><span class="tag t-entry">発酵習慣講座</span></td>
           </tr>
           <tr>
             <td>12/19（土）</td>
             <td style="white-space:nowrap">18:30〜20:30</td>
-            <td>かぶら寿司＆ししゃも昆布巻き<br><small style="color:var(--brown-l);">お節料理におすすめの2品。麴の力でおいしさアップ！</small></td>
-            <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span><br><small style="color:var(--brown-l);">またはチケット1枚</small></td>
+            <td>かぶら寿司＆ししゃも昆布巻き<br><small style="color:var(--brown-l);">お節料理におすすめの2品。麴の力でおいしさアップ！</small><br><small style="color:var(--brown-l);">軽食付き</small></td>
+            <td style="text-align:right"><span class="t-price">¥5,500<span class="tax-note">（税込）</span></span><br><small style="color:var(--brown-l);">またはチケット1枚</small></td>
             <td style="text-align:center"><span class="tag t-entry">発酵習慣講座</span></td>
           </tr>
           <tr>
             <td>12/22（火）</td>
             <td style="white-space:nowrap">11:00〜14:00</td>
-            <td>かぶら寿司＆ししゃも昆布巻き<br><small style="color:var(--brown-l);">お節料理におすすめの2品。麴の力でおいしさアップ！</small></td>
+            <td>かぶら寿司＆ししゃも昆布巻き<br><small style="color:var(--brown-l);">お節料理におすすめの2品。麴の力でおいしさアップ！</small><br><small style="color:var(--brown-l);">発酵ランチ付き</small></td>
             <td style="text-align:right"><span class="t-price">¥6,600<span class="tax-note">（税込）</span></span><br><small style="color:var(--brown-l);">またはチケット1枚</small></td>
             <td style="text-align:center"><span class="tag t-entry">発酵習慣講座</span></td>
           </tr>
@@ -1741,13 +1765,8 @@ footer{
         <p class="flunch-desc">自家製の発酵調味料を使い、季節の食材を活かしたお膳。<br>デザート・食後のお飲み物付き。</p>
 
         <div class="flunch-date-box">
-          <div class="flunch-date-label">12/29（火）限定 特別企画</div>
-          <div class="flunch-date">しめ縄づくり＆花籠ランチ</div>
-          <div style="font-size:13px;color:var(--text);line-height:1.8;margin-top:8px;">
-            11:00〜14:00　参加費　¥6,600<span class="tax-note">（税込）</span>（しめ縄づくり＋花籠ランチ）
-          </div>
-          <div class="flunch-accept" style="margin-top:8px;">🌿 ただいま受付中！LINEよりお申し込みください。</div>
-          <a href="https://lin.ee/WyI7Hk6" target="_blank" class="flunch-mini-btn">この講座＋ランチを予約する</a>
+          <div class="flunch-date-label">12月の開催日</div>
+          <div class="flunch-date">12月の花かご発酵ランチはお休みします</div>
         </div>
 
         <div class="flunch-price-wrap">
